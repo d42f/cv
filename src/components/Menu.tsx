@@ -19,9 +19,7 @@ export const Menu = ({ className }: MenuProps) => (
     <ul className={styles.list}>
       {ITEMS.map(({ path, label }, index) => (
         <li className={styles.item} key={index}>
-          <Link className={styles.link} href={path}>
-            {label}
-          </Link>
+          <Link className={styles.link} href={path}>{label}</Link>
         </li>
       ))}
     </ul>
