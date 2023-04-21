@@ -11,5 +11,5 @@ export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
       </Head>
       <Component {...pageProps} />
     </>
-  )
+  );
 }

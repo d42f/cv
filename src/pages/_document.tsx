@@ -36,7 +36,7 @@ export default class MyDocument extends Document<DocumentProps> {
   }
 
   render() {
-    const { appName, author,language, languageDirection } = this.props;
+    const { appName, author, language, languageDirection } = this.props;
 
     return (
       <Html lang={language} dir={languageDirection}>
