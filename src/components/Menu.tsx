@@ -3,27 +3,32 @@ import Link from 'next/link';
 import classNames from 'classnames';
 
 import styles from './Menu.module.scss';
+import { useRouter } from 'next/router';
 
-const ITEMS = [
-  { path: '/', label: 'About' },
-  { path: '/', label: 'Timeline' },
-  { path: '/', label: 'Contacts' },
-];
-
-interface MenuProps {
-  className?: string;
+interface MenuItem {
+  href: string;
+  label: string;
 }
 
-export const Menu = ({ className }: MenuProps) => (
-  <nav className={classNames(styles.wrapper, className)}>
-    <ul className={styles.list}>
-      {ITEMS.map(({ path, label }, index) => (
-        <li className={styles.item} key={index}>
-          <Link className={styles.link} href={path}>
-            {label}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  </nav>
-);
+export interface MenuProps {
+  className?: string;
+  items: MenuItem[];
+}
+
+export const Menu = ({ className, items }: MenuProps): JSX.Element => {
+  const { asPath } = useRouter();
+
+  return (
+    <nav className={classNames(styles.wrapper, className)}>
+      <ul className={styles.list}>
+        {items.map(({ href, label }, index) => (
+          <li className={styles.item} key={index}>
+            <Link className={classNames(styles.link, { [styles.linkActive]: asPath === href })} href={href}>
+              {label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};

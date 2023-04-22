@@ -2,7 +2,6 @@
 @import './variables.scss';
 @import './mixins.scss';
 
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -24,12 +23,11 @@ body {
   font-family: $font-family-sans-serif;
   font-size: $font-size-base;
   line-height: $line-height-base;
-  background-image:
-    radial-gradient(344px at 100px 50%, rgba(248, 248, 248, 0.6) 40%, transparent 100%),
+  background-image: radial-gradient(344px at 100px 50%, rgba(248, 248, 248, 0.6) 40%, transparent 100%),
     radial-gradient(811px at 100px 150px, rgba(255, 212, 251, 0.6) 40%, transparent 100%),
-    radial-gradient(845px at calc(100% - 400px) -150px, #CAD0EF 40%, transparent 100%),
-    radial-gradient(845px at 362px calc(100% - 10px), #CAD0EF 40%, transparent 100%),
-    radial-gradient(811px at calc(100% - 237px) calc(100% - 161px), rgba(255, 238, 147, 0.2) 40%, transparent 100%),;
+    radial-gradient(845px at calc(100% - 400px) -150px, #cad0ef 40%, transparent 100%),
+    radial-gradient(845px at 362px calc(100% - 10px), #cad0ef 40%, transparent 100%),
+    radial-gradient(811px at calc(100% - 237px) calc(100% - 161px), rgba(255, 238, 147, 0.2) 40%, transparent 100%);
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

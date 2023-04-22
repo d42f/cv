@@ -1,10 +1,10 @@
 import { render, screen } from '@testing-library/react';
 
-import Home from './index';
+import Index from './[[...slug]]';
 
-describe('<Home />', () => {
+describe('<Index />', () => {
   it('renders component', () => {
-    render(<Home />);
+    render(<Index />);
     expect(screen.getByText('Get started by editing')).toBeInTheDocument();
   });
 });

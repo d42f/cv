@@ -21,8 +21,9 @@
 }
 
 .link {
-  $highlight-color: rgba(255, 238, 147, 0.6);
-  $animation-duration: 0.2s;
+  $highlight-color: rgba(232, 51, 213, 0.5);
+  $animation-duration: 0.25s;
+  $animation-function: 0.25s;
 
   display: block;
   padding: 0.25rem 0.5rem;
@@ -31,50 +32,30 @@
 
   &:before {
     content: '';
-    display: block;
-    width: 100%;
-    height: 0%;
-    position: absolute;
-    bottom: 0.25rem;
-    left: 0;
-    z-index: -1;
-    background-color: $highlight-color;
-    border-radius: 0.5rem 0.5rem 0 0;
-    transition: height $animation-duration ease-in;
-  }
-
-  &:after {
-    content: '';
-    display: block;
-    width: 0%;
+    display: none;
+    width: 0.25rem;
     height: 0.25rem;
     position: absolute;
     bottom: 0;
     left: 50%;
     z-index: -1;
     background-color: $highlight-color;
-    border-radius: 0 0 0.25rem 0.25rem;
-    transition:
-      width $animation-duration ease-in-out,
-      left $animation-duration ease-in-out;
+    border-radius: 0.25rem;
+    transform: translate3d(-50%, 0 0);
+    transition: width $animation-duration $animation-function, left $animation-duration $animation-function;
   }
 
   &:hover {
-    &:after {
-      width: 100%;
-      left: 0;
+    &:before {
+      display: block;
     }
   }
 
-  &:focus {
+  &.linkActive {
     &:before {
-      height: calc(100% - 0.25rem);
-    }
-
-    &:after {
+      display: block;
       width: 100%;
       left: 0;
     }
   }
 }
-
