@@ -17,5 +17,8 @@
     "react-hooks/exhaustive-deps": "error",
     "@typescript-eslint/no-unused-vars": ["warn", { "ignoreRestSiblings": true }],
     "prettier/prettier": ["error", { "endOfLine": "auto" }]
+  },
+  "settings": {
+    "@typescript-eslint/parser": [".ts", ".tsx"]
   }
 }

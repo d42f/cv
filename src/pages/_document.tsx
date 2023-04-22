@@ -1,4 +1,7 @@
+import getConfig from 'next/config';
 import Document, { DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript } from 'next/document';
+
+const { publicRuntimeConfig } = getConfig();
 
 interface DocumentAdditionalProps {
   languageDirection: string;
@@ -28,8 +31,8 @@ export default class MyDocument extends Document<DocumentProps> {
     const additionalProps = {
       languageDirection: 'ltr',
       language: 'en',
-      appName: 'My CV',
-      author: 'dmitri.frolof@gmail.com',
+      appName: publicRuntimeConfig.appName,
+      author: publicRuntimeConfig.author,
     };
 
     return { ...initialProps, ...additionalProps };
