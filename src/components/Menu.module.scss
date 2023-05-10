@@ -21,9 +21,9 @@
 }
 
 .link {
-  $highlight-color: rgba(232, 51, 213, 0.5);
-  $animation-duration: 0.25s;
-  $animation-function: 0.25s;
+  $highlight-color: rgba(58, 89, 255, 0.73);
+  $animation-duration: 0.2s;
+  $animation-function: ease-in-out;
 
   display: block;
   padding: 0.25rem 0.5rem;
@@ -38,7 +38,7 @@
     position: absolute;
     bottom: 0;
     left: 50%;
-    z-index: -1;
+    z-index: 0;
     background-color: $highlight-color;
     border-radius: 0.25rem;
     transform: translate3d(-50%, 0 0);

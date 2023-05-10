@@ -2,33 +2,26 @@ import React from 'react';
 import Link from 'next/link';
 import classNames from 'classnames';
 
+import { IPage } from '@/models/IPage';
+
 import styles from './Menu.module.scss';
-import { useRouter } from 'next/router';
 
-interface MenuItem {
-  href: string;
-  label: string;
-}
-
-export interface MenuProps {
+interface MenuProps {
   className?: string;
-  items: MenuItem[];
+  items: IPage[];
+  active: IPage | null;
 }
 
-export const Menu = ({ className, items }: MenuProps): JSX.Element => {
-  const { asPath } = useRouter();
-
-  return (
-    <nav className={classNames(styles.wrapper, className)}>
-      <ul className={styles.list}>
-        {items.map(({ href, label }, index) => (
-          <li className={styles.item} key={index}>
-            <Link className={classNames(styles.link, { [styles.linkActive]: asPath === href })} href={href}>
-              {label}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
-  );
-};
+export const Menu = ({ className, items, active }: MenuProps): JSX.Element => (
+  <nav className={classNames(styles.wrapper, className)}>
+    <ul className={styles.list}>
+      {items.map((item, index) => (
+        <li className={styles.item} key={index}>
+          <Link className={classNames(styles.link, { [styles.linkActive]: item === active })} href={item.href}>
+            {item.label}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </nav>
+);
