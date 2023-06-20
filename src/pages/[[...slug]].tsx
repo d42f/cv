@@ -28,8 +28,8 @@ const SEGMENTS: ISegment[] = [
   },
 ];
 
-const getActiveSegmentByKey = (segments: ISegment[], key: string | null): ISegment | undefined =>
-  segments.find(segment => segment.key === key);
+const getActiveSegmentByKey = (segments: ISegment[], key: string | null): ISegment | null =>
+  segments.find(segment => segment.key === key) || null;
 
 export default function Index() {
   const { asPath, push } = useRouter();

@@ -1,0 +1,92 @@
+name: Dmitrii Frolov
+position: Front-end UI Developer
+email: dmitri.frolof@gmail.com
+telegram: dmitrifrolof
+address: Berlin, Germany
+links:
+  github: https://github.com/d42f
+  linkedin: https://www.linkedin.com/in/dmitrifrolof/
+  twitter: https://twitter.com/dmitri_frolof
+  instagram: https://www.instagram.com/d42f/
+  facebook: https://www.facebook.com/dmitri.frolof
+  codewars: https://www.codewars.com/users/d42f
+skills: React, Webpack, TypeScript, JavaScript, styled-components, SCSS, AngularJS, Node.js, SPA, PWA, REST API, WebRTC
+methodologies: Agile, Kanban, Scrum
+languages: English (read, write, speak), Russian (native)
+interests: Traveling, Crossfit, Videogames, Reading, Cooking
+summary:
+  Hi! My name is Dmitrii and I'm from Berlin, Germany.
+  I have more than 10 years of experience with running projects from start to a production deployment, as well as supporting huge codebases.
+  Know how to deploy web projects and manage the infrastructure they’re running on.
+  Like to learn new stuff and tune my skills to be keep up with current state of software development.
+
+speeches:
+  - title: How to buy a bike (Как купить велосипед)
+    date: 2014-11-27
+    link: https://www.youtube.com/watch?v=LArDmHECVig
+    description: It was my first public speech.
+  - title: One does not simply switch from AngularJS to Angular2.
+    date: 2015-02-28
+    presentation: https://docs.google.com/presentation/d/16zK4XFgAUbOXswwzUiG1Ij8lWS0BLttFNuCoiAlOXzk/edit
+    description: My second public speech. Unfortunately there is no video.
+
+experience:
+  - company: Getsitecontrol
+    position: Senior Frontend Developer
+    date_from: 2019-09
+    date_to: null
+    description:
+      Getsitecontrol is a service for creating and integrating forms and promo widgets into your site.
+      I joined the team when they were finishing the work on a new version of the product.
+      Base functions were already implemented. I worked on the remaining features and fixed known bugs.
+      When we released a new version I took over the support of the administration panel and the implementation of new features.
+    achievements:
+      - Refactoring old code and releasing production ready version.
+      - Improving configurability of the project so our team was able to release the new service "Getform" in short time beacuse it was based on an existing project.
+      - Refactoring existing styles and typography so we could implement pixelperfect testing.
+  - company: Novakid
+    position: Senior Frontend Developer (Tech Lead)
+    date_from: 2017-08
+    date_to: 2019-09
+    description:
+      Novakid is an online language school for children.
+      Service contains a media server for making video calls between teacher and student in browser and a working space with slides and mini games and whiteboard for lessons.
+      During my work there I went from being a single frontend developer to taking over the role of tech lead.
+      It was my first time going from idea to implementation and project highload (more than 1000 active video calls between users a day).
+      It all became possible thanks to company SEO Maxim Azarov.
+    achievements:
+      - Research and integration of our platform with open source media server "Kurento"
+      - Designing NodeJS application for making video calls between teacher and student in browser via WebRTC technology.
+      - Planning and management new releases of the platform.
+  - company: ASDTech
+    position: Senior Frontend Developer
+    date_from: 2013-05
+    date_to: 2017-08
+    description:
+      During my four years with ASDTech I participated in large projects for customers as well as in some internal company projects.
+      Our main products were cloud storages for mobile operators such as Vodafone, Vestel, MegaFon.
+      My role was development of the mobile and web client as well as mentoring junior frontend developers.
+    achievements:
+      - Creating deeply customizable architecture for one of the major company product "Cloudike".
+      - Developing architecture for company's white-label product that made it possible to support about ten customers by only one developer.
+      - Developing SSO client that was used for company's web, mobile and desktop clients.
+  - company: Onlyoffice (TeamLab)
+    position: Frontend Developer
+    date_from: 2009-09
+    date_to: 2012-06
+    description:
+      It was my first expirience in large company with excellent teammates who helped me boost my skills.
+      Before that my experince was limited with small or medium sites based on CMS.
+      I was very lucky to have a chance to work in such an experienced team with a great teamlead.
+    achievements:
+      - Taking part in development of a module for the video conferences based on Red5 server.
+      - Developing web client based on XMPP protocol for part of company's profuct "TM Talk".
+      - Developing API SDK for SPA version of the product.
+
+#education:
+#  - title: Department of Radio Electronics and Computer Systems
+#    place: Vladimir State University
+#    date_from: '2004-09'
+#    date_to: '2009-05'
+#    description:
+#      Master of Computer Science and Engineering, BCA 0610377
