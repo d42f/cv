@@ -1,10 +1,12 @@
 import React from 'react';
 import classNames from 'classnames';
-
-import { name, position, summary, skills, methodologies } from '../resume.yaml';
-import styles from './About.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
+
+import resume from '../resume.yaml';
+import styles from './About.module.scss';
+
+const { name, position, summary, skills, methodologies } = resume;
 
 interface AboutProps {
   className?: string;
