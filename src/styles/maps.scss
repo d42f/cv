@@ -1,0 +1,91 @@
+@import 'variables';
+
+$buttons-colors: (
+  primary: $white,
+  secondary: $dark,
+  light: $dark,
+);
+
+$buttons-shadows: (
+  primary: 4px 4px 40px 4px rgba(168, 168, 168, 0.25),
+  secondary: none,
+  light: none,
+);
+
+$buttons-background: (
+  primary: linear-gradient(213deg, rgb(241, 184, 210) 0%, rgb(149, 187, 233) 100%),
+  secondary: $secondary,
+  light: $light
+);
+
+$buttons-border: (
+  primary: $white,
+  secondary: $secondary,
+  light: $light
+);
+
+$buttons-hover-background: (
+  primary: darken($primary, 7.5%),
+  secondary: darken($secondary, 7.5%),
+  light: darken($light, 7.5%)
+);
+
+$buttons-hover-border: (
+  primary: darken($primary, 10%),
+  secondary: darken($secondary, 10%),
+  light: darken($light, 10%)
+);
+
+$buttons-active-background: (
+  primary: darken($primary, 10%),
+  secondary: darken($secondary, 10%),
+  light: darken($light, 10%)
+);
+
+$buttons-active-border: (
+  primary: darken($primary, 12.5%),
+  secondary: darken($secondary, 12.5%),
+  light: darken($light, 12.5%)
+);
+
+$buttons-padding-x: (
+  sm: $btn-padding-x-sm,
+  md: $btn-padding-x,
+  lg: $btn-padding-x-lg
+);
+
+$buttons-padding-y: (
+  sm: $btn-padding-y-sm,
+  md: $btn-padding-y,
+  lg: $btn-padding-y-lg
+);
+
+$buttons-font-size: (
+  sm: $btn-font-size-sm,
+  md: $btn-font-size,
+  lg: $btn-font-size-lg
+);
+
+$buttons-font-weight: (
+  sm: $btn-font-weight-sm,
+  md: $btn-font-weight,
+  lg: $btn-font-weight-lg
+);
+
+$buttons-line-height: (
+  sm: $btn-line-height-sm,
+  md: $btn-line-height,
+  lg: $btn-line-height-lg
+);
+
+$buttons-border-width: (
+  sm: $btn-border-width-sm,
+  md: $btn-border-width,
+  lg: $btn-border-width-lg
+);
+
+$buttons-border-radius: (
+  sm: $btn-border-radius-sm,
+  md: $btn-border-radius,
+  lg: $btn-border-radius-lg
+);

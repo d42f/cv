@@ -12,6 +12,13 @@ const nextConfig = {
     appName: 'Dmitrii Frolov`s CV',
     author: 'dmitri.frolof@gmail.com',
   },
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.ya?ml$/,
+      use: 'js-yaml-loader',
+    });
+    return config;
+  }
 };
 
 module.exports = nextConfig;

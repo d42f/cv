@@ -1,36 +1,10 @@
-@import './variables.scss';
+@import 'variables';
+@import 'maps';
+@import 'functions';
 
-@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
-  $min: map-get($breakpoints, $name);
-  @return if($min != 0, $min, null);
-}
-
-@function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
-  $max: map-get($breakpoints, $name);
-  @return if($max and $max > 0, $max - 0.02, null);
-}
-
-@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
-  $min: breakpoint-min($name, $breakpoints);
-  @if $min {
-    @media (min-width: $min) {
-      @content;
-    }
-  } @else {
-    @content;
-  }
-}
-
-@mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
-  $max: breakpoint-max($name, $breakpoints);
-  @if $max {
-    @media (max-width: $max) {
-      @content;
-    }
-  } @else {
-    @content;
-  }
-}
+@import 'mixins/gradients';
+@import 'mixins/breakpoints';
+@import 'mixins/buttons';
 
 @mixin make-container() {
   max-width: $page-max-width;
@@ -45,14 +19,4 @@
   @include media-breakpoint-down(sm) {
     padding: 0 $page-gap-sm;
   }
-}
-
-@mixin make-background-gradient() {
-  background-color: $body-bg;
-  background-image: radial-gradient(344px at 100px 50%, rgba(248, 248, 248, 0.6) 40%, transparent 100%),
-    radial-gradient(811px at 100px 150px, rgba(255, 212, 251, 0.6) 40%, transparent 100%),
-    radial-gradient(845px at calc(100% - 400px) -150px, rgb(202, 208, 239) 40%, transparent 100%),
-    radial-gradient(845px at 362px calc(100% - 10px), rgb(202, 208, 239) 40%, transparent 100%),
-    radial-gradient(811px at calc(100% - 237px) calc(100% - 161px), rgba(255, 238, 147, 0.2) 40%, transparent 100%);
-  background-attachment: fixed;
 }

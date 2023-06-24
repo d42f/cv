@@ -1,0 +1,9 @@
+@mixin make-background-gradient() {
+  background-color: $body-bg;
+  background-image: radial-gradient(344px at 100px 50%, rgba(248, 248, 248, 0.6) 40%, transparent 100%),
+    radial-gradient(811px at 100px 150px, rgba(255, 212, 251, 0.6) 40%, transparent 100%),
+    radial-gradient(845px at calc(100% - 400px) -150px, rgb(202, 208, 239) 40%, transparent 100%),
+    radial-gradient(845px at 362px calc(100% - 10px), rgb(202, 208, 239) 40%, transparent 100%),
+    radial-gradient(811px at calc(100% - 237px) calc(100% - 161px), rgba(255, 238, 147, 0.2) 40%, transparent 100%);
+  background-attachment: fixed;
+}

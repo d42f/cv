@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:300,400,600&display=swap');
-@import './variables.scss';
-@import './mixins.scss';
+@import 'variables';
+@import 'mixins';
 
 * {
   box-sizing: border-box;
