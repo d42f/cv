@@ -1,51 +1,45 @@
 @import 'variables';
 
-$buttons-colors: (
+$buttons-color: (
   primary: $white,
   secondary: $dark,
   light: $dark,
 );
 
-$buttons-shadows: (
-  primary: 4px 4px 40px 4px rgba(168, 168, 168, 0.25),
-  secondary: none,
-  light: none,
-);
-
 $buttons-background: (
-  primary: linear-gradient(213deg, rgb(241, 184, 210) 0%, rgb(149, 187, 233) 100%),
+  primary: $primary,
   secondary: $secondary,
   light: $light
 );
 
 $buttons-border: (
-  primary: $white,
+  primary: $primary,
   secondary: $secondary,
   light: $light
 );
 
 $buttons-hover-background: (
-  primary: darken($primary, 7.5%),
-  secondary: darken($secondary, 7.5%),
-  light: darken($light, 7.5%)
+  primary: darken($primary, 4%),
+  secondary: darken($secondary, 4%),
+  light: darken($light, 4%)
 );
 
 $buttons-hover-border: (
-  primary: darken($primary, 10%),
-  secondary: darken($secondary, 10%),
-  light: darken($light, 10%)
+  primary: darken($primary, 4%),
+  secondary: darken($secondary, 4%),
+  light: darken($light, 4%)
 );
 
 $buttons-active-background: (
-  primary: darken($primary, 10%),
-  secondary: darken($secondary, 10%),
-  light: darken($light, 10%)
+  primary: darken($primary, 8%),
+  secondary: darken($secondary, 8%),
+  light: darken($light, 8%)
 );
 
 $buttons-active-border: (
-  primary: darken($primary, 12.5%),
-  secondary: darken($secondary, 12.5%),
-  light: darken($light, 12.5%)
+  primary: darken($primary, 8%),
+  secondary: darken($secondary, 8%),
+  light: darken($light, 8%)
 );
 
 $buttons-padding-x: (

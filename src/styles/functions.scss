@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 // Color contrast
 @function color-yiq($color, $dark: $yiq-text-dark, $light: $yiq-text-light) {
   $r: red($color);
@@ -11,4 +13,8 @@
   } @else {
     @return $light;
   }
+}
+
+@function strip-units($number) {
+  @return math.div($number, ($number * 0 + 1));
 }

@@ -1,61 +1,3 @@
-@mixin button-variant($color, $shadow, $background, $border, $hover-background: darken($background, 7.5%), $hover-border: darken($border, 10%), $active-background: darken($background, 10%), $active-border: darken($border, 12.5%)) {
-  color: $color;
-  background: $background;
-  border-color: $border;
-  box-shadow: $shadow;
-
-  &:hover {
-    color: $color;
-    background: $hover-background;
-    border-color: $hover-border;
-  }
-
-  &:focus,
-  &.focus {
-    color: $color;
-    background: $hover-background;
-    border-color: $hover-border;
-  }
-
-  &.disabled,
-  &:disabled {
-    color: $color;
-    background-color: $background;
-    border-color: $border;
-  }
-
-  &:not(:disabled):not(.disabled):active,
-  &:not(:disabled):not(.disabled).active {
-    color: color-yiq($active-background);
-    background-color: $active-background;
-    border-color: $active-border;
-  }
-}
-
-@mixin button-outline-variant($color, $color-hover: color-yiq($color), $active-background: $color, $active-border: $color) {
-  color: $color;
-  border-color: $color;
-
-  &:hover {
-    color: $color-hover;
-    background-color: $active-background;
-    border-color: $active-border;
-  }
-
-  &.disabled,
-  &:disabled {
-    color: $color;
-    background-color: transparent;
-  }
-
-  &:not(:disabled):not(.disabled):active,
-  &:not(:disabled):not(.disabled).active {
-    color: color-yiq($active-background);
-    background-color: $active-background;
-    border-color: $active-border;
-  }
-}
-
 @mixin button-size($padding-y, $padding-x, $font-size, $line-height, $border-radius) {
   padding: $padding-y $padding-x;
   font-size: $font-size;
@@ -63,12 +5,13 @@
 }
 
 @mixin base-button($size: md) {
-  display: inline-block;
+  display: inline-flex;
+  flex-flow: row nowrap;
+  align-items: center;
   font-weight: map-get($buttons-font-weight, $size);
   color: $body-color;
   text-align: center;
   white-space: nowrap;
-  vertical-align: middle;
   cursor: pointer;
   user-select: none;
   background-color: transparent;
@@ -100,12 +43,79 @@
   }
 }
 
+@mixin button-variant(
+  $color,
+  $background,
+  $border,
+  $hover-background,
+  $hover-border,
+  $active-background,
+  $active-border
+) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    color: $color;
+    background-color: $hover-background;
+    border-color: $hover-border;
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $color;
+    background-color: $background;
+    border-color: $border;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    color: $color;
+    background-color: $active-background;
+    border-color: $active-border;
+  }
+}
+
+@mixin button-outline-variant(
+  $color,
+  $hover-border: darken($color, 4%),
+  $active-border: darken($color, 8%),
+) {
+  color: $color;
+  background-color: transparent;
+  border-color: $color;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    color: $color;
+    background-color: rgba($color, 0.1);
+    border-color: $hover-border;
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $color;
+    background-color: transparent;
+    border-color: $color;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    color: $color;
+    background-color: rgba($color, 0.2);
+    border-color: $active-border;
+  }
+}
+
 @mixin button($name: secondary, $size: md) {
   @include base-button($size);
 
   @include button-variant(
-    map-get($buttons-colors, $name),
-    map-get($buttons-shadows, $name),
+    map-get($buttons-color, $name),
     map-get($buttons-background, $name),
     map-get($buttons-border, $name),
     map-get($buttons-hover-background, $name),
@@ -119,6 +129,6 @@
   @include base-button($size);
 
   @include button-outline-variant(
-    map-get($buttons-border, $name)
+    map-get($buttons-background, $name),
   );
 }

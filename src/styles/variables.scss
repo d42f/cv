@@ -1,3 +1,5 @@
+@import 'functions';
+
 $font-family-serif: 'Times New Roman', Times, sans-serif;
 $font-family-sans-serif: Raleway, 'Segoe UI', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
   'Segoe UI Symbol', 'Noto Color Emoji';
@@ -15,7 +17,7 @@ $font-weight-lighter: 300;
 $font-weight-normal: 400;
 $font-weight-bold: 600;
 
-$line-height-base: 24 / 16;
+$line-height-base: 24 / strip-units($font-size-html);
 $line-height-sm: 1.25;
 $line-height-md: $line-height-base;
 $line-height-lg: 2;
@@ -34,11 +36,13 @@ $page-gap-base: 5rem;
 $page-gap-lg: 2rem;
 $page-gap-sm: 1rem;
 
-$primary: #1164ff;
+$primary: #343C46;
 $secondary: #6c757d;
 $dark: #212529;
 $light: #f8fafd;
 $white: #ffffff;
+$pink: #f1b8d2;
+$cornflower: #95bbe9;
 
 $yiq-contrasted-threshold: 150;
 $yiq-text-dark: $dark;
@@ -47,30 +51,30 @@ $yiq-text-light: $white;
 $body-bg: $white;
 $body-color: $dark;
 
-$btn-padding-y: .375rem;
-$btn-padding-x: .75rem;
-$btn-font-size: $font-size-md;
-$btn-line-height: $line-height-md;
+$btn-padding-y: .625rem;
+$btn-padding-x: 1rem;
+$btn-font-size: 1rem;
+$btn-line-height: 18 / strip-units($font-size-html);
 
-$btn-padding-y-sm: .25rem;
+$btn-padding-y-sm: .5rem;
 $btn-padding-x-sm: .5rem;
 $btn-font-size-sm: $font-size-sm;
-$btn-line-height-sm: $line-height-sm;
+$btn-line-height-sm: 1;
 
-$btn-padding-y-lg: .5rem;
+$btn-padding-y-lg: .875rem;
 $btn-padding-x-lg: 1rem;
-$btn-font-size-lg: $font-size-lg;
-$btn-line-height-lg: $line-height-lg;
+$btn-font-size-lg: 1.125rem;
+$btn-line-height-lg: 18 / (strip-units($font-size-html) * 1.125);
 
-$btn-border-width: 2px;
+$btn-border-width: 1px;
 $btn-border-width-sm: 1px;
-$btn-border-width-lg: 2px;
+$btn-border-width-lg: 1px;
 
-$btn-border-radius: .625rem;
-$btn-border-radius-sm: .375rem;
-$btn-border-radius-lg: .75rem;
+$btn-border-radius: .375rem;
+$btn-border-radius-sm: .25rem;
+$btn-border-radius-lg: .5rem;
 
-$btn-font-weight: 500;
+$btn-font-weight: 400;
 $btn-font-weight-sm: 400;
 $btn-font-weight-lg: 500;
 
