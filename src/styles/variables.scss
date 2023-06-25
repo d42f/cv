@@ -38,11 +38,20 @@ $page-gap-sm: 1rem;
 
 $primary: #343C46;
 $secondary: #6c757d;
-$dark: #212529;
-$light: #f8fafd;
+$blue: #1164ff;
+
 $white: #ffffff;
-$pink: #f1b8d2;
-$cornflower: #95bbe9;
+$light: #f8fafd;
+$gray-100: #f8fafd;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #050505;
+$gray-800: #343a40;
+$gray-900: #1e2022;
+$dark: #212529;
 
 $yiq-contrasted-threshold: 150;
 $yiq-text-dark: $dark;
@@ -50,6 +59,14 @@ $yiq-text-light: $white;
 
 $body-bg: $white;
 $body-color: $dark;
+$link-color: $blue;
+
+$h1-font-size: $font-size-base * 3;
+$h2-font-size: $font-size-base * 2.25;
+$h3-font-size: $font-size-base * 1.5;
+$h4-font-size: $font-size-base * 1.25;
+$h5-font-size: $font-size-base * 1;
+$h6-font-size: $font-size-base * 0.875;
 
 $btn-padding-y: .625rem;
 $btn-padding-x: 1rem;

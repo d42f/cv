@@ -4,7 +4,7 @@
   line-height: $line-height;
 }
 
-@mixin base-button($size: md) {
+@mixin base-button($size: md, $rect: false) {
   display: inline-flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -20,7 +20,7 @@
 
   @include button-size(
     map-get($buttons-padding-y, $size),
-    map-get($buttons-padding-x, $size),
+    if($rect == true, map-get($buttons-padding-y, $size), map-get($buttons-padding-x, $size)),
     map-get($buttons-font-size, $size),
     map-get($buttons-line-height, $size),
     map-get($buttons-border-radius, $size)
@@ -111,8 +111,8 @@
   }
 }
 
-@mixin button($name: secondary, $size: md) {
-  @include base-button($size);
+@mixin button($name: secondary, $size: md, $rect: false) {
+  @include base-button($size, $rect);
 
   @include button-variant(
     map-get($buttons-color, $name),
@@ -125,8 +125,8 @@
   );
 }
 
-@mixin button-outline($name: secondary, $size: md) {
-  @include base-button($size);
+@mixin button-outline($name: secondary, $size: md, $rect: false) {
+  @include base-button($size, $rect);
 
   @include button-outline-variant(
     map-get($buttons-background, $name),
