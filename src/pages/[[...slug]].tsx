@@ -8,6 +8,8 @@ import { Header } from '@/components/Header';
 import { Timeline } from '@/components/Timeline';
 import { About } from '@/components/About';
 import { Segment } from '@/components/Segment';
+import { PageFooter } from '@/components/PageFooter';
+import { Contacts } from '@/components/Contacts';
 
 interface ISegment {
   key: string;
@@ -25,6 +27,11 @@ const SEGMENTS: ISegment[] = [
     key: 'timeline',
     page: { href: '/timeline', label: 'Timeline' },
     Component: Timeline,
+  },
+  {
+    key: 'contacts',
+    page: { href: '/contacts', label: 'Contacts' },
+    Component: Contacts,
   },
 ];
 
@@ -59,6 +66,7 @@ export default function Index() {
           ))}
         </>
       </SegmentContainer>
+      <PageFooter />
     </>
   );
 }

@@ -4,7 +4,7 @@ export const useWasScrolled = (element: HTMLElement | Window | null, offset = 0)
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    function handleScroll() {
+    const handleScroll = () => {
       const scroll = element
         ? 'scrollY' in element
           ? element.scrollY
@@ -13,8 +13,9 @@ export const useWasScrolled = (element: HTMLElement | Window | null, offset = 0)
           : null
         : null;
       setIsScrolled(typeof scroll === 'number' ? scroll > offset : false);
-    }
+    };
 
+    handleScroll();
     element?.addEventListener('scroll', handleScroll);
     return () => {
       element?.removeEventListener('scroll', handleScroll);

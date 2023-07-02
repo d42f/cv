@@ -1,49 +1,65 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { createRef, useEffect } from 'react';
+import React, { createRef, ReactNode, useEffect } from 'react';
 import classNames from 'classnames';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaHome, FaPrint } from 'react-icons/fa';
 
-import { formatDate } from '../utils/date';
-import { formatPhone } from '../utils/phone';
-import { linkEmail, linkPhone, linkTelegram } from '../utils/link';
-import resume from '../resume.yaml';
+import {
+  education,
+  email,
+  experience,
+  interests,
+  languages,
+  links,
+  methodologies,
+  name,
+  phone,
+  skills,
+  summary,
+  telegram,
+} from '@/resume';
+import { formatDate } from '@/utils/date';
+import { formatPhone } from '@/utils/phone';
+import { linkEmail, linkPhone, linkTelegram } from '@/utils/link';
 import styles from './ResumeDocument.module.scss';
 
 const DATE_MASK = 'yyyy-MM';
 
-const contacts = [
-  { label: resume.email, href: linkEmail(resume.email) },
-  ...(resume.phone ? [{ label: `${formatPhone(resume.phone)}`, href: linkPhone(resume.phone) }] : []),
-  ...(resume.telegram ? [{ label: `telegram: @${resume.telegram}`, href: linkTelegram(resume.telegram) }] : []),
+interface IPoint {
+  title: string;
+  subtitle?: string;
+  description?: string;
+  achievements?: string[];
+}
+
+const getDateString = (from: string, to: string | null): string =>
+  `${formatDate(from, DATE_MASK)} — ${to ? formatDate(to, DATE_MASK) : 'Present'}`;
+
+const CONTACTS = [
+  { label: email, href: linkEmail(email) },
+  ...(phone ? [{ label: `${formatPhone(phone)}`, href: linkPhone(phone) }] : []),
+  ...(telegram ? [{ label: `telegram: @${telegram}`, href: linkTelegram(telegram) }] : []),
 ];
 
-const links = [
-  { label: 'Github', href: resume.links.github },
-  { label: 'LinkedIn', href: resume.links.linkedin },
-  { label: 'Twitter', href: resume.links.twitter },
-  { label: 'CodeWars', href: resume.links.codewars },
+const LINKS = [
+  { label: 'Github', href: links.github },
+  { label: 'LinkedIn', href: links.linkedin },
+  { label: 'Twitter', href: links.twitter },
+  { label: 'CodeWars', href: links.codewars },
 ];
 
-const experiencePoints = (resume.experience || []).map(
-  ({ position, company, date_from, date_to, description, achievements }: any) => ({
-    title: `${company ? `${company} - ` : ''}${position}`,
-    subtitle:
-      date_from || date_to
-        ? `${formatDate(date_from, DATE_MASK)} — ${date_to ? formatDate(date_to, DATE_MASK) : 'Present'}`
-        : null,
+const EXPERIENCE_POINTS: IPoint[] = experience.map(
+  ({ title, position, date_from, date_to, description, achievements }) => ({
+    title: `${title ? `${title} - ` : ''}${position}`,
+    ...(date_from || date_to ? { subtitle: getDateString(date_from, date_to) } : null),
     description,
     achievements,
   }),
 );
 
-const educationPoints = (resume.education || []).map(({ title, place, date_from, date_to, description }: any) => ({
+const EDUCATION_POINTS: IPoint[] = education.map(({ title, place, date_from, date_to, description }) => ({
   title: `${place}${title ? ` - ${title}` : ''}`,
-  subtitle:
-    date_from || date_to
-      ? `${formatDate(date_from, DATE_MASK)} — ${date_to ? formatDate(date_to, DATE_MASK) : 'Present'}`
-      : null,
+  ...(date_from || date_to ? { subtitle: getDateString(date_from, date_to) } : null),
   description,
 }));
 
@@ -59,7 +75,7 @@ const Links = ({ items }: { items: Array<{ label: string; href: string }> }): JS
   </ul>
 );
 
-const Point = ({ title, subtitle, children }: any): JSX.Element => (
+const Point = ({ title, subtitle, children }: IPoint & { children: ReactNode }): JSX.Element => (
   <div className={styles.point}>
     <div className={styles.pointHeader}>
       <div className={styles.pointTitle}>{title}</div>
@@ -69,11 +85,19 @@ const Point = ({ title, subtitle, children }: any): JSX.Element => (
   </div>
 );
 
-const Section = ({ label, points, children }: any): JSX.Element => (
+const Section = ({
+  label,
+  points,
+  children,
+}: {
+  label: string;
+  points?: IPoint[];
+  children?: ReactNode;
+}): JSX.Element => (
   <section className={styles.section}>
     <span className={styles.sectionLabel}>{label}</span>
     <div className={styles.sectionContent}>
-      {points?.map(({ title, subtitle, description, achievements }: any, index: number) => (
+      {points?.map(({ title, subtitle, description, achievements }, index: number) => (
         <Point title={title} subtitle={subtitle} key={index}>
           {description && <p>{description}</p>}
           {achievements && (
@@ -124,9 +148,9 @@ export const ResumeDocument = ({ className }: ResumeDocumentProps): JSX.Element 
       <div className={styles.page} ref={pageRef}>
         <section className={styles.header}>
           <div className={styles.description}>
-            <h1 className={styles.name}>{resume.name}</h1>
-            <Links items={contacts} />
-            <Links items={links} />
+            <h1 className={styles.name}>{name}</h1>
+            <Links items={CONTACTS} />
+            <Links items={LINKS} />
           </div>
           <div className={styles.photo}>
             <Image className={styles.image} src="/avatar_small.jpg" width={80} height={80} alt="" />
@@ -134,35 +158,35 @@ export const ResumeDocument = ({ className }: ResumeDocumentProps): JSX.Element 
         </section>
         <hr className={styles.separator} />
         <Section label="Summary">
-          <p>{resume.summary}</p>
+          <p>{summary}</p>
         </Section>
-        {!!experiencePoints.length && (
+        {!!EXPERIENCE_POINTS.length && (
           <>
             <hr className={styles.separator} />
-            <Section label="Experience" points={experiencePoints} />
+            <Section label="Experience" points={EXPERIENCE_POINTS} />
           </>
         )}
-        {!!educationPoints.length && (
+        {!!EDUCATION_POINTS.length && (
           <>
             <hr className={styles.separator} />
-            <Section label="Education" points={educationPoints} />
+            <Section label="Education" points={EDUCATION_POINTS} />
           </>
         )}
         <hr className={styles.separator} />
         <Section label="Skills">
           <p>
-            <strong>Technologies</strong>: {resume.skills}
+            <strong>Technologies</strong>: {skills}
           </p>
           <p>
-            <strong>Methodologies</strong>: {resume.methodologies}
+            <strong>Methodologies</strong>: {methodologies}
           </p>
         </Section>
         <hr className={styles.separator} />
         <Section label="Languages">
-          <p>{resume.languages}</p>
+          <p>{languages}</p>
         </Section>
         <Section label="Interests">
-          <p>{resume.interests}</p>
+          <p>{interests}</p>
         </Section>
       </div>
       <footer className={styles.toolbar} ref={toolbarRef}>

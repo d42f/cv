@@ -2,7 +2,7 @@ const monthsShort = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Se
 
 const zero = (num: number): string => (num < 10 ? '0' : '') + num;
 
-export const formatDate = (date: Date, mask: string): string => {
+export const formatDate = (date: Date | string, mask: string): string => {
   date = new Date(date);
   switch (mask) {
     case 'yyyy':
