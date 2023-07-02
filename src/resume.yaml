@@ -53,7 +53,7 @@ experience:
       Service contains a media server for making video calls between teacher and student in browser and a working space with slides and mini games and whiteboard for lessons.
       During my work there I went from being a single frontend developer to taking over the role of tech lead.
       It was my first time going from idea to implementation and project highload (more than 1000 active video calls between users a day).
-      It all became possible thanks to company SEO Maxim Azarov.
+      It all became possible thanks to company CEO Maxim Azarov.
     achievements:
       - Research and integration of our platform with open source media server "Kurento"
       - Designing NodeJS application for making video calls between teacher and student in browser via WebRTC technology.

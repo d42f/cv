@@ -55,6 +55,7 @@
   color: $color;
   background-color: $background;
   border-color: $border;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 
   &:hover,
   &:focus,
@@ -87,6 +88,7 @@
   color: $color;
   background-color: transparent;
   border-color: $color;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 
   &:hover,
   &:focus,

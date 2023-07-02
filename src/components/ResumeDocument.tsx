@@ -9,10 +9,9 @@ import { formatDate } from '../utils/date';
 import { formatPhone } from '../utils/phone';
 import { linkEmail, linkPhone, linkTelegram } from '../utils/link';
 import resume from '../resume.yaml';
-
 import styles from './ResumeDocument.module.scss';
 
-const dateMask = 'yyyy-MM';
+const DATE_MASK = 'yyyy-MM';
 
 const contacts = [
   { label: resume.email, href: linkEmail(resume.email) },
@@ -32,7 +31,7 @@ const experiencePoints = (resume.experience || []).map(
     title: `${company ? `${company} - ` : ''}${position}`,
     subtitle:
       date_from || date_to
-        ? `${formatDate(date_from, dateMask)} — ${date_to ? formatDate(date_to, dateMask) : 'Present'}`
+        ? `${formatDate(date_from, DATE_MASK)} — ${date_to ? formatDate(date_to, DATE_MASK) : 'Present'}`
         : null,
     description,
     achievements,
@@ -43,7 +42,7 @@ const educationPoints = (resume.education || []).map(({ title, place, date_from,
   title: `${place}${title ? ` - ${title}` : ''}`,
   subtitle:
     date_from || date_to
-      ? `${formatDate(date_from, dateMask)} — ${date_to ? formatDate(date_to, dateMask) : 'Present'}`
+      ? `${formatDate(date_from, DATE_MASK)} — ${date_to ? formatDate(date_to, DATE_MASK) : 'Present'}`
       : null,
   description,
 }));
