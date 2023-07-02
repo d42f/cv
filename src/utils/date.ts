@@ -16,3 +16,6 @@ export const formatDate = (date: Date | string, mask: string): string => {
   }
   return date.toString();
 };
+
+export const formatDateRange = (from: string, to: string | null, dateMask: string): string =>
+  `${formatDate(from, dateMask)} — ${to ? formatDate(to, dateMask) : 'Present'}`;

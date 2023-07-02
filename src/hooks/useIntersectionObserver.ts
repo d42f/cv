@@ -1,41 +1,75 @@
 import { useEffect, useRef, useState } from 'react';
 
-const PARAMS: IntersectionObserverInit = {
-  root: null,
-  rootMargin: '0%',
-  threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
-};
-
-interface useIntersectionObserverProps {
-  container: Element | null;
+interface UseIntersectionObserverProps extends IntersectionObserverInit {
+  freezeOnceVisible?: boolean;
 }
 
-export const useIntersectionObserver = ({ container }: useIntersectionObserverProps) => {
-  const [activeTarget, setActiveTarget] = useState<Element | null>(null);
+export const useVisibleChildren = (
+  element: Element | null,
+  {
+    root = null,
+    rootMargin = '0%',
+    threshold = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
+    freezeOnceVisible = false,
+  }: UseIntersectionObserverProps = {},
+) => {
+  const [activeChildren, setActiveChildren] = useState<Element | null>(null);
   const activeEntryRef = useRef<IntersectionObserverEntry>();
 
   useEffect(() => {
     const updateEntry = ([entry]: IntersectionObserverEntry[]) => {
-      const { intersectionRatio, target } = entry;
+      const { intersectionRatio, isIntersecting, target } = entry;
       const { current: activeEntry } = activeEntryRef;
-      if (!activeEntry || target === activeEntry.target || intersectionRatio >= activeEntry.intersectionRatio) {
-        activeEntryRef.current = entry;
+      const frozen = isIntersecting && freezeOnceVisible;
+      if (!frozen) {
+        if (!activeEntry || target === activeEntry.target || intersectionRatio >= activeEntry.intersectionRatio) {
+          activeEntryRef.current = entry;
+        }
+        setActiveChildren(activeEntryRef.current?.target || null);
       }
-      setActiveTarget(activeEntryRef.current?.target || null);
     };
 
-    if (container) {
-      const observers = Array.from(container.children).map(target => {
-        if (target && window.IntersectionObserver) {
-          const observer = new IntersectionObserver(updateEntry, PARAMS);
-          observer.observe(target);
-          return observer;
-        }
+    if (element && window.IntersectionObserver) {
+      const observerParams = { threshold, root, rootMargin };
+      const observers = Array.from(element.children).map(children => {
+        const observer = new IntersectionObserver(updateEntry, observerParams);
+        observer.observe(children);
+        return observer;
       });
 
-      return () => observers.forEach(observer => observer?.disconnect());
+      return () => observers.forEach(observer => observer.disconnect());
     }
-  }, [container]);
+  }, [element, freezeOnceVisible, root, rootMargin, threshold]);
 
-  return activeTarget;
+  return activeChildren;
+};
+
+export const useVisible = (
+  element: Element | null,
+  { threshold = 0, root = null, rootMargin = '0%', freezeOnceVisible = false }: UseIntersectionObserverProps = {},
+): boolean => {
+  const [entry, setEntry] = useState<IntersectionObserverEntry>();
+
+  const frozen = entry?.isIntersecting && freezeOnceVisible;
+
+  useEffect(() => {
+    const updateEntry = ([entry]: IntersectionObserverEntry[]) => {
+      setEntry(entry);
+    };
+
+    const hasSupport = !!window.IntersectionObserver;
+
+    if (!hasSupport || frozen || !element) {
+      return;
+    }
+
+    const observerParams = { threshold, root, rootMargin };
+    const observer = new IntersectionObserver(updateEntry, observerParams);
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, [element, threshold, root, rootMargin, frozen]);
+
+  return !!entry?.isIntersecting;
 };

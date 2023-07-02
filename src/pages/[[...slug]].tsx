@@ -2,14 +2,14 @@ import React, { ComponentType, useEffect, useMemo, useRef } from 'react';
 import { useRouter } from 'next/router';
 
 import { IPage } from '@/models/IPage';
-import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import { useVisibleChildren } from '@/hooks/useIntersectionObserver';
 import { SegmentContainer } from '@/components/SegmentContainer';
+import { Segment } from '@/components/Segment';
 import { Header } from '@/components/Header';
 import { Timeline } from '@/components/Timeline';
 import { About } from '@/components/About';
-import { Segment } from '@/components/Segment';
-import { PageFooter } from '@/components/PageFooter';
 import { Contacts } from '@/components/Contacts';
+import { PageFooter } from '@/components/PageFooter';
 
 interface ISegment {
   key: string;
@@ -42,7 +42,7 @@ export default function Index() {
   const { asPath, push } = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const activeTarget = useIntersectionObserver({ container: containerRef.current });
+  const activeTarget = useVisibleChildren(containerRef.current);
   const activeSegment = getActiveSegmentByKey(SEGMENTS, activeTarget?.getAttribute('data-key') || null);
 
   const pages = useMemo(() => SEGMENTS.map(({ page }) => page), []);

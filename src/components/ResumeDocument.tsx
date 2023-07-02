@@ -18,12 +18,10 @@ import {
   summary,
   telegram,
 } from '@/resume';
-import { formatDate } from '@/utils/date';
+import { formatDateRange } from '@/utils/date';
 import { formatPhone } from '@/utils/phone';
 import { linkEmail, linkPhone, linkTelegram } from '@/utils/link';
 import styles from './ResumeDocument.module.scss';
-
-const DATE_MASK = 'yyyy-MM';
 
 interface IPoint {
   title: string;
@@ -32,8 +30,7 @@ interface IPoint {
   achievements?: string[];
 }
 
-const getDateString = (from: string, to: string | null): string =>
-  `${formatDate(from, DATE_MASK)} — ${to ? formatDate(to, DATE_MASK) : 'Present'}`;
+const DATE_MASK = 'yyyy-MM';
 
 const CONTACTS = [
   { label: email, href: linkEmail(email) },
@@ -51,7 +48,7 @@ const LINKS = [
 const EXPERIENCE_POINTS: IPoint[] = experience.map(
   ({ title, position, date_from, date_to, description, achievements }) => ({
     title: `${title ? `${title} - ` : ''}${position}`,
-    ...(date_from || date_to ? { subtitle: getDateString(date_from, date_to) } : null),
+    ...(date_from || date_to ? { subtitle: formatDateRange(date_from, date_to, DATE_MASK) } : null),
     description,
     achievements,
   }),
@@ -59,7 +56,7 @@ const EXPERIENCE_POINTS: IPoint[] = experience.map(
 
 const EDUCATION_POINTS: IPoint[] = education.map(({ title, place, date_from, date_to, description }) => ({
   title: `${place}${title ? ` - ${title}` : ''}`,
-  ...(date_from || date_to ? { subtitle: getDateString(date_from, date_to) } : null),
+  ...(date_from || date_to ? { subtitle: formatDateRange(date_from, date_to, DATE_MASK) } : null),
   description,
 }));
 
@@ -123,7 +120,7 @@ export const ResumeDocument = ({ className }: ResumeDocumentProps): JSX.Element 
   const toolbarRef = createRef<HTMLDivElement>();
 
   useEffect(() => {
-    function handleWindowRerender() {
+    const handleWindowRerender = () => {
       const pageRect = pageRef.current?.getBoundingClientRect();
       if (pageRect && toolbarRef.current) {
         toolbarRef.current.style.right = `${pageRect.left}px`;
@@ -132,7 +129,7 @@ export const ResumeDocument = ({ className }: ResumeDocumentProps): JSX.Element 
           toolbarRef.current.style.bottom = `${window.innerHeight - pageRect.bottom}px`;
         }
       }
-    }
+    };
 
     handleWindowRerender();
     window.addEventListener('resize', handleWindowRerender);
