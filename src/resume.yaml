@@ -78,10 +78,9 @@ experience:
       - Taking part in development of a module for the video conferences based on Red5 server.
       - Developing web client based on XMPP protocol for part of company's profuct "TM Talk".
       - Developing API SDK for SPA version of the product.
-#education:
-#  - title: Department of Radio Electronics and Computer Systems
-#    place: Vladimir State University
-#    date_from: '2004-09'
-#    date_to: '2009-05'
-#    description:
-#      Master of Computer Science and Engineering, BCA 0610377
+education:
+  - title: Department of Radio Electronics and Computer Systems
+    place: Vladimir State University
+    date_from: '2004-09'
+    date_to: '2009-05'
+    description: Master of Computer Science and Engineering, BCA 0610377
