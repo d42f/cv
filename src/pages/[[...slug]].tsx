@@ -1,5 +1,5 @@
 import React, { ComponentType, useEffect, useMemo, useRef } from 'react';
-import { useRouter } from 'next/router';
+import Router, { useRouter } from 'next/router';
 
 import { IPage } from '@/models/IPage';
 import { useVisibleChildren } from '@/hooks/useIntersectionObserver';
@@ -35,28 +35,38 @@ const SEGMENTS: ISegment[] = [
   },
 ];
 
-const getActiveSegmentByKey = (segments: ISegment[], key: string | null): ISegment | null =>
-  segments.find(segment => segment.key === key) || null;
+const getActiveSegmentByKey = (segments: ISegment[], key: string | null | undefined): ISegment | undefined =>
+  segments.find(segment => segment.key === key);
+
+const getChildBySegment = (element: Element, segment: ISegment): Element | undefined =>
+  Array.from(element.children).find(element => element.getAttribute('data-key') === segment.key);
 
 export default function Index() {
-  const { asPath, push } = useRouter();
+  const { asPath } = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const activeTarget = useVisibleChildren(containerRef.current);
-  const activeSegment = getActiveSegmentByKey(SEGMENTS, activeTarget?.getAttribute('data-key') || null);
+  const focusedTarget = useVisibleChildren(containerRef.current);
+  const focusedSegment = getActiveSegmentByKey(SEGMENTS, focusedTarget?.getAttribute('data-key'));
 
   const pages = useMemo(() => SEGMENTS.map(({ page }) => page), []);
-  const activePage = useMemo(() => pages.find(page => page.href === asPath) || null, [pages, asPath]);
+  const activePage = useMemo(() => pages.find(page => page.href === asPath), [pages, asPath]);
+
+  const handlePageSelect = (page: IPage) => {
+    const { current } = containerRef;
+    const segment = SEGMENTS.find(segment => segment.page === page);
+    const child = current && segment ? getChildBySegment(current, segment) : null;
+    child?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   useEffect(() => {
-    if (activeSegment && activePage && activeSegment.page !== activePage) {
-      push(activeSegment.page.href, undefined, { scroll: false, shallow: false });
+    if (focusedSegment?.page) {
+      Router.push(focusedSegment.page.href, undefined, { scroll: false, shallow: false });
     }
-  }, [activeSegment, activePage, push]);
+  }, [focusedSegment]);
 
   return (
     <>
-      <Header logoHref={pages[0].href} menuItems={pages} activeItem={activePage} />
+      <Header logoHref={pages[0].href} pages={pages} activePage={activePage} onSelect={handlePageSelect} />
       <SegmentContainer ref={containerRef}>
         <>
           {SEGMENTS.map(({ key, Component }) => (

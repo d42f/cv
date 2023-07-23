@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { useWindow } from '@/hooks/useWindow';
+
 interface UseIntersectionObserverProps extends IntersectionObserverInit {
   freezeOnceVisible?: boolean;
 }
@@ -49,20 +51,17 @@ export const useVisible = (
   { threshold = 0, root = null, rootMargin = '0%', freezeOnceVisible = false }: UseIntersectionObserverProps = {},
 ): boolean => {
   const [entry, setEntry] = useState<IntersectionObserverEntry>();
+  const win = useWindow();
 
-  const frozen = entry?.isIntersecting && freezeOnceVisible;
+  const hasSupport = !!win?.IntersectionObserver;
+  const frozen = !hasSupport || !element || (!!entry?.isIntersecting && freezeOnceVisible);
 
   useEffect(() => {
-    const updateEntry = ([entry]: IntersectionObserverEntry[]) => {
-      setEntry(entry);
-    };
-
-    const hasSupport = !!window.IntersectionObserver;
-
-    if (!hasSupport || frozen || !element) {
+    if (frozen) {
       return;
     }
 
+    const updateEntry = ([entry]: IntersectionObserverEntry[]) => setEntry(entry);
     const observerParams = { threshold, root, rootMargin };
     const observer = new IntersectionObserver(updateEntry, observerParams);
 
@@ -71,5 +70,5 @@ export const useVisible = (
     return () => observer.disconnect();
   }, [element, threshold, root, rootMargin, frozen]);
 
-  return !!entry?.isIntersecting;
+  return frozen || !!entry?.isIntersecting;
 };

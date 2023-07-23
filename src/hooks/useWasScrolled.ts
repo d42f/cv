@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react';
 
-export const useWasScrolled = (element: HTMLElement | Window | null, offset = 0): boolean => {
+import { useWindow } from '@/hooks/useWindow';
+
+export const useWasScrolled = (originalElement?: HTMLElement | Window | null | undefined, offset = 0): boolean => {
+  const win = useWindow();
+  const element = originalElement || win;
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
