@@ -44,6 +44,7 @@ const getChildBySegment = (element: Element, segment: ISegment): Element | undef
 export default function Index() {
   const { asPath } = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
+  const isScrollingRef = useRef(false);
 
   const focusedTarget = useVisibleChildren(containerRef.current);
   const focusedSegment = getActiveSegmentByKey(SEGMENTS, focusedTarget?.getAttribute('data-key'));
@@ -55,11 +56,16 @@ export default function Index() {
     const { current } = containerRef;
     const segment = SEGMENTS.find(segment => segment.page === page);
     const child = current && segment ? getChildBySegment(current, segment) : null;
-    child?.scrollIntoView({ behavior: 'smooth' });
+    if (child) {
+      isScrollingRef.current = true;
+      child.scrollIntoView({ behavior: 'smooth' });
+      // TODO: make it better
+      setTimeout(() => (isScrollingRef.current = false), 300);
+    }
   };
 
   useEffect(() => {
-    if (focusedSegment?.page) {
+    if (focusedSegment?.page && !isScrollingRef.current) {
       Router.push(focusedSegment.page.href, undefined, { scroll: false, shallow: false });
     }
   }, [focusedSegment]);

@@ -1,0 +1,18 @@
+@import './breakpoint';
+
+@mixin container() {
+  max-width: $page-max-width;
+  padding: 0 $page-gap-base;
+  margin: 0 auto;
+
+  @include media-breakpoint-down(lg) {
+    max-width: 100%;
+    padding-left: $page-gap-lg;
+    padding-right: $page-gap-lg;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-left: $page-gap-sm;
+    padding-right: $page-gap-sm;
+  }
+}

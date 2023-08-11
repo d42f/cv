@@ -1,22 +1,9 @@
 @import 'variables';
-@import 'maps';
 @import 'functions';
 
-@import 'mixins/gradients';
-@import 'mixins/breakpoints';
-@import 'mixins/buttons';
-
-@mixin make-container() {
-  max-width: $page-max-width;
-  padding: 0 $page-gap-base;
-  margin: 0 auto;
-
-  @include media-breakpoint-down(lg) {
-    max-width: 100%;
-    padding: 0 $page-gap-lg;
-  }
-
-  @include media-breakpoint-down(sm) {
-    padding: 0 $page-gap-sm;
-  }
-}
+@import 'mixins/breakpoint';
+@import 'mixins/gradient';
+@import 'mixins/container';
+@import 'mixins/form-control';
+@import 'mixins/form-field';
+@import 'mixins/button';

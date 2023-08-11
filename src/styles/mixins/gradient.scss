@@ -1,4 +1,4 @@
-@mixin make-background-gradient() {
+@mixin background-gradient() {
   background-color: $body-bg;
   background-image: radial-gradient(344px at 100px 50%, rgba(248, 248, 248, 0.6) 40%, transparent 100%),
     radial-gradient(811px at 100px 150px, rgba(255, 212, 251, 0.6) 40%, transparent 100%),

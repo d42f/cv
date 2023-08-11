@@ -1,4 +1,4 @@
-@import '@/styles/mixins.scss';
+@import '@/styles/mixins';
 
 .wrapper {
   width: 100%;
@@ -20,7 +20,7 @@
 }
 
 .container {
-  @include make-container();
+  @include container();
 }
 
 .content {

@@ -1,4 +1,4 @@
-@import '../styles/mixins';
+@import '@/styles/mixins';
 
 .wrapper {
   flex: 1;
@@ -13,11 +13,11 @@
 
   @include media-breakpoint-up(md) {
     display: block;
-    width: 100%/12*4;
+    width: 100%/12 * 4;
   }
 
   @include media-breakpoint-up(lg) {
-    width: 100%/12*3;
+    width: 100%/12 * 3;
   }
 }
 
