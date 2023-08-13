@@ -9,7 +9,7 @@ $font-family-mono: 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monosp
 
 $font-size-html: 16px;
 $font-size-base: 1rem;
-$font-size-sm: $font-size-base * 0.875;
+$font-size-sm: $font-size-base * 0.75;
 $font-size-md: $font-size-base;
 $font-size-lg: $font-size-base * 1.25;
 $font-size-xl: $font-size-base * 1.5;
@@ -19,7 +19,7 @@ $font-weight-normal: 400;
 $font-weight-bold: 600;
 
 $line-height-base: 24 / strip-units($font-size-html);
-$line-height-sm: 1.25;
+$line-height-sm: 18 / (strip-units($font-size-html) * strip-units($font-size-sm));
 $line-height-md: $line-height-base;
 $line-height-lg: 2;
 
@@ -59,6 +59,7 @@ $gray-700: #050505;
 $white: #ffffff;
 $light: $gray-100;
 $dark: #212529;
+$danger: #dc3545;
 
 $yiq-contrasted-threshold: 150;
 $yiq-text-dark: $dark;

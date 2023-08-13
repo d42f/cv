@@ -9,3 +9,10 @@
 @mixin form-label() {
   font-weight: $font-weight-bold;
 }
+
+@mixin form-error() {
+  line-height: $line-height-sm;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  color: $danger;
+}

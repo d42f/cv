@@ -2,15 +2,27 @@
 @import '@/styles/variables';
 @import '@/styles/mixins';
 
+@keyframes contactsFormFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .wrapper {
   display: flex;
   flex-flow: column;
+  align-items: center;
   row-gap: 4rem;
-  max-width: 36rem;
+  max-width: 100%;
   margin: auto;
 }
 
 .description {
+  width: 36rem;
+  max-width: 100%;
   font-size: $font-size-lg;
   text-align: center;
 }
@@ -20,10 +32,11 @@
   flex-flow: row nowrap;
   align-items: flex-start;
   column-gap: 2rem;
-  padding: 0 2rem;
+  width: 32rem;
+  max-width: 100%;
 }
 
-.block {
+.infoBlock {
   flex: 1;
   display: flex;
   flex-flow: column;
@@ -52,11 +65,35 @@
   }
 
   .label {
-    display: none;
     margin: 0.5rem 0 0;
-
-    @include media-breakpoint-up(md) {
-      display: block;
-    }
   }
+}
+
+.feedback {
+  width: 36rem;
+  max-width: 100%;
+  position: relative;
+}
+
+.form {
+  position: relative;
+  z-index: 0;
+
+  &Hidden {
+    animation: contactsFormFadeOut 0.5s linear;
+    animation-fill-mode: both;
+  }
+}
+
+.success {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
 }

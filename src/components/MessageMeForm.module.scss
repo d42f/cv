@@ -18,6 +18,10 @@
   @include form-label();
 }
 
+.formError {
+  @include form-error();
+}
+
 .formControl {
   @include form-control(primary, lg);
   max-width: 100%;

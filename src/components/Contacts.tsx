@@ -7,7 +7,9 @@ import { email, phone, telegram } from '@/resume';
 import { poster } from '@/utils/request';
 import { linkEmail, linkPhone, linkTelegram } from '@/utils/link';
 import { formatPhone } from '@/utils/phone';
-import { MessageMeData, MessageMeForm } from './MessageMeForm';
+import { sleep } from '@/utils/timeout';
+import { MessageMeData, MessageMeForm } from '@/components/MessageMeForm';
+import SuccessIcon from '@/components/SuccessIcon';
 import styles from './Contacts.module.scss';
 
 const CONTACTS = [
@@ -22,6 +24,7 @@ interface ContactsProps {
 
 export const Contacts = ({ className }: ContactsProps): JSX.Element => {
   const [isFetching, setIsFetching] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   const [formKey, setFormKey] = useState(0);
   const { trigger } = useSWRMutation('/api/messages', poster<MessageMeData>);
 
@@ -29,9 +32,12 @@ export const Contacts = ({ className }: ContactsProps): JSX.Element => {
     try {
       setIsFetching(true);
       await trigger(formData);
-      setFormKey(value => value + 1);
+      setIsSuccess(true);
+      await sleep(2000);
     } finally {
       setIsFetching(false);
+      setIsSuccess(false);
+      setFormKey(value => value + 1);
     }
   };
 
@@ -44,13 +50,25 @@ export const Contacts = ({ className }: ContactsProps): JSX.Element => {
       </p>
       <div className={styles.info}>
         {CONTACTS.map(({ label, href, Icon }, index) => (
-          <a key={index} className={styles.block} href={href} aria-label={label}>
+          <a key={index} className={styles.infoBlock} href={href} aria-label={label}>
             <Icon className={styles.icon} />
             <p className={styles.label}>{label}</p>
           </a>
         ))}
       </div>
-      <MessageMeForm key={formKey} disabled={isFetching} onSubmit={handleFormSubmit} />
+      <div className={styles.feedback}>
+        <MessageMeForm
+          className={classNames(styles.form, { [styles.formHidden]: isSuccess })}
+          key={formKey}
+          disabled={isFetching}
+          onSubmit={handleFormSubmit}
+        />
+        {isSuccess && (
+          <div className={styles.success}>
+            <SuccessIcon width="240" height="240" />
+          </div>
+        )}
+      </div>
     </div>
   );
 };
