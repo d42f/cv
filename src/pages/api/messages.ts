@@ -22,6 +22,7 @@ const sendMessage = async (req: NextApiRequest, res: NextApiResponse) => {
       template_id: process.env.EMAILJS_TEMPLATE_ID,
       template_params: { name, email, message },
     };
+    //
     const { status, statusText } = await fetch(process.env.EMAILJS_SEND_URL, {
       method: 'POST',
       headers: {
