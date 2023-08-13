@@ -11,7 +11,7 @@ const config = {
   transform: {
     '.+\\.(css|styl|less|sass|scss)$': 'jest-css-modules-transform',
   },
-  testEnvironment: 'jsdom',
+  testEnvironment: 'jest-environment-jsdom',
   globals: {
     'ts-jest': {
       tsconfig: 'tsconfig.test.json',

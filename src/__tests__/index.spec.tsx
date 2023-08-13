@@ -11,7 +11,7 @@ jest.mock(
   { virtual: true },
 );
 
-import Index from './[[...slug]]';
+import Index from '@/pages/[[...slug]]';
 
 describe('<Index />', () => {
   it('renders component', () => {
