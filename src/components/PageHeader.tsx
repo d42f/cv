@@ -4,9 +4,9 @@ import { IPage } from '@/models/IPage';
 import { useWasScrolled } from '@/hooks/useWasScrolled';
 import { Logo } from '@/components/Logo';
 import { Menu } from '@/components/Menu';
-import styles from './Header.module.scss';
+import styles from './PageHeader.module.scss';
 
-interface HeaderProps {
+interface PageHeaderProps {
   className?: string;
   logoHref: string;
   pages: IPage[];
@@ -14,7 +14,7 @@ interface HeaderProps {
   onSelect?: (page: IPage) => void;
 }
 
-export const Header = ({ className, logoHref, pages, activePage, onSelect }: HeaderProps): JSX.Element => {
+export const PageHeader = ({ className, logoHref, pages, activePage, onSelect }: PageHeaderProps): JSX.Element => {
   const isScrolled = useWasScrolled();
 
   return (

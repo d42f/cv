@@ -6,7 +6,7 @@ import { IPage } from '@/models/IPage';
 import { useVisibleChildren } from '@/hooks/useIntersectionObserver';
 import { SegmentContainer } from '@/components/SegmentContainer';
 import { Segment } from '@/components/Segment';
-import { Header } from '@/components/Header';
+import { PageHeader } from '@/components/PageHeader';
 import { Timeline } from '@/components/Timeline';
 import { About } from '@/components/About';
 import { Contacts } from '@/components/Contacts';
@@ -73,7 +73,7 @@ export default function Index() {
 
   return (
     <>
-      <Header logoHref={pages[0].href} pages={pages} activePage={activePage} onSelect={handlePageSelect} />
+      <PageHeader logoHref={pages[0].href} pages={pages} activePage={activePage} onSelect={handlePageSelect} />
       <SegmentContainer ref={containerRef}>
         <>
           {SEGMENTS.map(({ key, Component }) => (
