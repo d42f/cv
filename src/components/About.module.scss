@@ -45,12 +45,33 @@
 }
 
 .experience {
-  display: grid;
-  grid-template-columns: 1fr;
+  strong {
+    display: block;
+    float: left;
+  }
+
+  span {
+    display: block;
+
+    &::before {
+      content: '\00a0';
+    }
+  }
 
   @include media-breakpoint-up(sm) {
+    display: grid;
     grid-template-columns: auto 1fr;
-    grid-column-gap: 0.5rem;
+    gap: 0.5rem;
+
+    strong {
+      float: none;
+    }
+
+    span {
+      &::before {
+        content: none;
+      }
+    }
   }
 }
 
