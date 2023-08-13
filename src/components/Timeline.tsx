@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import { experience } from '@/resume';
 import { formatDateRange } from '@/utils/date';
 import { useVisible } from '@/hooks/useIntersectionObserver';
+import { SectionTitle } from '@/components/SectionTitle';
 import styles from './Timeline.module.scss';
 
 interface IBlock {
@@ -46,13 +47,14 @@ const Block = ({ title, subtitle, date, description }: IBlock): JSX.Element => {
 
 export const Timeline = ({ className }: TimelineProps): JSX.Element => (
   <article className={classNames(styles.wrapper, className)}>
-    <div className={styles.edgePoint}>PRESENT</div>
+    <SectionTitle label="Timeline" />
+    <div className={classNames(styles.edgePoint, styles.startPoint)}>PRESENT</div>
     <div className={styles.container}>
       {BLOCKS.map((block, index) => (
         <Block key={index} {...block} />
       ))}
     </div>
-    <div className={styles.edgePoint}>
+    <div className={classNames(styles.edgePoint, styles.edgePointEnd)}>
       <FaBookmark />
     </div>
   </article>

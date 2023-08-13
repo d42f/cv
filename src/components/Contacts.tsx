@@ -9,6 +9,7 @@ import { linkEmail, linkPhone, linkTelegram } from '@/utils/link';
 import { formatPhone } from '@/utils/phone';
 import { sleep } from '@/utils/timeout';
 import { MessageMeData, MessageMeForm } from '@/components/MessageMeForm';
+import { SectionTitle } from '@/components/SectionTitle';
 import SuccessIcon from '@/components/SuccessIcon';
 import styles from './Contacts.module.scss';
 
@@ -43,6 +44,7 @@ export const Contacts = ({ className }: ContactsProps): JSX.Element => {
 
   return (
     <div className={classNames(styles.wrapper, className)}>
+      <SectionTitle label="Contacts" />
       <p className={styles.description}>
         Want to say hello? Want to know more about me?
         <br />

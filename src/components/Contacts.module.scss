@@ -15,7 +15,6 @@
   display: flex;
   flex-flow: column;
   align-items: center;
-  row-gap: 4rem;
   max-width: 100%;
   margin: auto;
 }
@@ -23,6 +22,7 @@
 .description {
   width: 36rem;
   max-width: 100%;
+  margin: 1rem 0 0;
   font-size: $font-size-lg;
   text-align: center;
 }
@@ -34,6 +34,7 @@
   column-gap: 2rem;
   width: 32rem;
   max-width: 100%;
+  margin: 2rem 0 0;
 }
 
 .infoBlock {
@@ -72,6 +73,7 @@
 .feedback {
   width: 36rem;
   max-width: 100%;
+  margin: 2rem 0 0;
   position: relative;
 }
 

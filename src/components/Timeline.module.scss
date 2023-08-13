@@ -52,10 +52,13 @@ $timeline-bg: $gray-600;
 }
 
 .wrapper {
+  $padding-x: 1rem;
+  $row-gap: 1rem;
+
   display: flex;
   flex-flow: column;
-  row-gap: 1rem;
-  padding: 0 1rem;
+  row-gap: $row-gap;
+  padding: 0 $padding-x;
   position: relative;
   overflow: hidden;
 
@@ -63,14 +66,15 @@ $timeline-bg: $gray-600;
     content: '';
     width: 0.25rem;
     position: absolute;
-    top: 0;
+    top: 9rem;
     bottom: 0;
-    left: $point-size / 2;
+    left: $padding-x + $point-size / 2;
     z-index: 0;
     transform: translateX(-50%);
     background-color: rgba($timeline-bg, 0.5);
 
     @include media-breakpoint-up(md) {
+      top: 5rem;
       left: 50%;
     }
   }
@@ -87,6 +91,16 @@ $timeline-bg: $gray-600;
   border-radius: $border-radius-md;
   font-weight: $font-weight-bold;
   color: $timeline-bg;
+
+  &End {
+    margin: 0 auto 0 0;
+    transform: translate3d(-25%, 0, 0);
+
+    @include media-breakpoint-up(md) {
+      margin: 0 auto;
+      transform: none;
+    }
+  }
 }
 
 .container {
