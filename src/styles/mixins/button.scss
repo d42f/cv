@@ -43,12 +43,17 @@ $button-active-border: (
   light: darken($light, 8%),
 );
 
+$button-font-weight: (
+  sm: $font-weight-normal,
+  md: $font-weight-normal,
+  lg: $font-weight-bold,
+);
+
 @mixin base-button($size: md, $rect: false) {
   @include base-form-control(
     map-get($form-control-padding-y, $size),
     if($rect == true, map-get($form-control-padding-y, $size), map-get($form-control-padding-x, $size)),
     map-get($form-control-font-size, $size),
-    map-get($form-control-font-weight, $size),
     map-get($form-control-line-height, $size),
     map-get($form-control-border-width, $size),
     map-get($form-control-border-radius, $size)
@@ -56,8 +61,13 @@ $button-active-border: (
 
   justify-content: center;
   white-space: nowrap;
+  font-weight: map-get($button-font-weight, $size);
   cursor: pointer;
   user-select: none;
+
+  &:disabled {
+    cursor: default;
+  }
 
   &:hover() {
     text-decoration: none;

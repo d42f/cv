@@ -1,5 +1,6 @@
-import classNames from 'classnames';
+import { useState } from 'react';
 import { FaEnvelope, FaPhone, FaTelegramPlane } from 'react-icons/fa';
+import classNames from 'classnames';
 import useSWRMutation from 'swr/mutation';
 
 import { email, phone, telegram } from '@/resume';
@@ -20,11 +21,18 @@ interface ContactsProps {
 }
 
 export const Contacts = ({ className }: ContactsProps): JSX.Element => {
-  const { trigger, data } = useSWRMutation('/api/messages', poster<MessageMeData>);
+  const [isFetching, setIsFetching] = useState(false);
+  const [formKey, setFormKey] = useState(0);
+  const { trigger } = useSWRMutation('/api/messages', poster<MessageMeData>);
 
   const handleFormSubmit = async (formData: MessageMeData) => {
-    const result = await trigger(formData);
-    console.log({ data, result });
+    try {
+      setIsFetching(true);
+      await trigger(formData);
+      setFormKey(value => value + 1);
+    } finally {
+      setIsFetching(false);
+    }
   };
 
   return (
@@ -42,7 +50,7 @@ export const Contacts = ({ className }: ContactsProps): JSX.Element => {
           </a>
         ))}
       </div>
-      <MessageMeForm onSubmit={handleFormSubmit} />
+      <MessageMeForm key={formKey} disabled={isFetching} onSubmit={handleFormSubmit} />
     </div>
   );
 };

@@ -42,13 +42,12 @@ $form-control-active-border: (
   light: darken($light, 8%),
 );
 
-@mixin base-form-control($padding-y, $padding-x, $font-size, $font-weight, $line-height, $border-size, $border-radius) {
+@mixin base-form-control($padding-y, $padding-x, $font-size, $line-height, $border-size, $border-radius) {
   display: inline-flex;
   flex-flow: row nowrap;
   align-items: center;
   padding: $padding-y $padding-x;
   font-size: $font-size;
-  font-weight: $font-weight;
   line-height: $line-height;
   border: $border-size solid transparent;
   border-radius: $border-radius;
@@ -116,6 +115,7 @@ $form-control-active-border: (
     color: $color;
     background-color: transparent;
     border-color: $color;
+    cursor: default;
   }
 
   &:not(:disabled):not(.disabled):active,
@@ -133,7 +133,6 @@ $form-control-active-border: (
     map-get($form-control-padding-y, $size),
     map-get($form-control-padding-x, $size),
     map-get($form-control-font-size, $size),
-    map-get($form-control-font-weight, $size),
     map-get($form-control-line-height, $size),
     map-get($form-control-border-width, $size),
     map-get($form-control-border-radius, $size)

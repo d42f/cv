@@ -82,27 +82,21 @@ $form-control-padding-x: (
 );
 
 $form-control-padding-y: (
-  sm: 0.5rem,
-  md: 0.625rem,
-  lg: 0.875rem,
+  sm: 0.375rem,
+  md: 0.5rem,
+  lg: 0.625rem,
 );
 
 $form-control-font-size: (
   sm: 0.875rem,
   md: 1rem,
-  lg: 1.125rem,
-);
-
-$form-control-font-weight: (
-  sm: $font-weight-normal,
-  md: $font-weight-normal,
-  lg: $font-weight-bold,
+  lg: 1.25rem,
 );
 
 $form-control-line-height: (
-  sm: 1,
-  md: math.div(18, strip-units($font-size-html)),
-  lg: math.div(18, strip-units($font-size-html) * 1.125),
+  sm: math.div(18, strip-units($font-size-html) * strip-units(map-get($form-control-font-size, sm))),
+  md: math.div(22, strip-units($font-size-html) * strip-units(map-get($form-control-font-size, md))),
+  lg: math.div(26, strip-units($font-size-html) * strip-units(map-get($form-control-font-size, lg))),
 );
 
 $form-control-border-width: (

@@ -27,10 +27,10 @@ export const About = ({ className }: AboutProps): JSX.Element => (
         <span>{methodologies}</span>
       </section>
       <footer className={styles.nav}>
-        <Link className={`${styles.navBtn} ${styles.navBtnPrimary}`} href="/resume">
+        <Link className={styles.navBtnPrimary} href="/resume">
           My Resume
         </Link>
-        <Link className={`${styles.navBtn} ${styles.navBtnLight}`} href="/contacts">
+        <Link className={styles.navBtnLight} href="/contacts">
           My contacts
         </Link>
       </footer>
