@@ -21,7 +21,7 @@ export const Header = ({ className, logoHref, pages, activePage, onSelect }: Hea
     <header className={classNames(styles.wrapper, className, { [styles.wrapperSticked]: isScrolled })}>
       <div className={styles.container}>
         <div className={styles.content}>
-          <Logo href={logoHref} />
+          <Logo className={styles.logo} href={logoHref} />
           <Menu className={styles.menu} items={pages} active={activePage} onSelect={onSelect} />
         </div>
       </div>

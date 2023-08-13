@@ -1,5 +1,6 @@
 import React, { ComponentType, useEffect, useMemo, useRef } from 'react';
-import Router, { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
+import Router from 'next/router';
 
 import { IPage } from '@/models/IPage';
 import { useVisibleChildren } from '@/hooks/useIntersectionObserver';
@@ -42,7 +43,7 @@ const getChildBySegment = (element: Element, segment: ISegment): Element | undef
   Array.from(element.children).find(element => element.getAttribute('data-key') === segment.key);
 
 export default function Index() {
-  const { asPath } = useRouter();
+  const pathName = usePathname();
   const containerRef = useRef<HTMLDivElement>(null);
   const isScrollingRef = useRef(false);
 
@@ -50,7 +51,7 @@ export default function Index() {
   const focusedSegment = getActiveSegmentByKey(SEGMENTS, focusedTarget?.getAttribute('data-key'));
 
   const pages = useMemo(() => SEGMENTS.map(({ page }) => page), []);
-  const activePage = useMemo(() => pages.find(page => page.href === asPath), [pages, asPath]);
+  const activePage = useMemo(() => pages.find(page => page.href === pathName), [pages, pathName]);
 
   const handlePageSelect = (page: IPage) => {
     const { current } = containerRef;
