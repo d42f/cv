@@ -149,9 +149,7 @@ export const ResumeDocument = ({ className }: ResumeDocumentProps): JSX.Element 
             <Links items={CONTACTS} />
             <Links items={LINKS} />
           </div>
-          <div className={styles.photo}>
-            <Image className={styles.image} src="/avatar_small.jpg" width={80} height={80} alt="" />
-          </div>
+          <Image className={styles.photo} src="/avatar_small.jpg" width={80} height={80} alt="" />
         </section>
         <hr className={styles.separator} />
         <Section label="Summary">
@@ -171,12 +169,14 @@ export const ResumeDocument = ({ className }: ResumeDocumentProps): JSX.Element 
         )}
         <hr className={styles.separator} />
         <Section label="Skills">
-          <p>
-            <strong>Technologies</strong>: {skills}
-          </p>
-          <p>
-            <strong>Methodologies</strong>: {methodologies}
-          </p>
+          <div className={styles.point}>
+            <p>
+              <strong>Technologies</strong>: {skills}
+            </p>
+            <p>
+              <strong>Methodologies</strong>: {methodologies}
+            </p>
+          </div>
         </Section>
         <hr className={styles.separator} />
         <Section label="Languages">
