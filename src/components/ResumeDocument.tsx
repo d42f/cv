@@ -30,7 +30,7 @@ interface IPoint {
   achievements?: string[];
 }
 
-const DATE_MASK = 'yyyy-MM';
+const DATE_MASK = 'yyyy-mm';
 
 const CONTACTS = [
   { label: email, href: linkEmail(email) },
