@@ -2,7 +2,14 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 import { isObject } from '@/utils/type';
 
-const sendMessage = async (req: NextApiRequest, res: NextApiResponse) => {
+type Data =
+  | { status: 'Ok' }
+  | {
+      status: 'Error';
+      message: string;
+    };
+
+const sendMessage = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   const { name, email, message } = JSON.parse(req.body) as { name: string; email: string; message: string };
 
   if (
@@ -11,7 +18,7 @@ const sendMessage = async (req: NextApiRequest, res: NextApiResponse) => {
     !process.env.EMAILJS_SERVICE_ID ||
     !process.env.EMAILJS_TEMPLATE_ID
   ) {
-    res.status(400).json({ message: 'Invalid EMAILJS configuration' });
+    res.status(400).json({ status: 'Error', message: 'Invalid EMAILJS configuration' });
     return;
   }
 
@@ -32,18 +39,19 @@ const sendMessage = async (req: NextApiRequest, res: NextApiResponse) => {
     if (status !== 200) {
       throw new Error(statusText);
     }
-    res.status(200).json({ status: statusText });
+    res.status(200).json({ status: 'Ok' });
   } catch (error) {
-    res.status(400).json(isObject(error) && 'message' in error ? { error: error.message } : 'Unknown error');
+    const errorMessage = isObject(error) && 'message' in error ? (error.message as string) : 'Unknown error';
+    res.status(400).json({ status: 'Error', message: errorMessage });
   }
 };
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
   switch (req.method?.toLowerCase()) {
     case 'post':
       await sendMessage(req, res);
       break;
     default:
-      res.status(400).json({ message: 'Invalid method' });
+      res.status(400).json({ status: 'Error', message: 'Invalid method' });
   }
 }

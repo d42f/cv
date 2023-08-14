@@ -45,6 +45,7 @@ const getChildBySegment = (element: Element, segment: ISegment): Element | undef
 export default function Index() {
   const pathName = usePathname();
   const containerRef = useRef<HTMLDivElement>(null);
+  const isInit = useRef(false);
   const isScrollingRef = useRef(false);
 
   const focusedTarget = useVisibleChildren(containerRef.current);
@@ -53,7 +54,7 @@ export default function Index() {
   const pages = useMemo(() => SEGMENTS.map(({ page }) => page), []);
   const activePage = useMemo(() => pages.find(page => page.href === pathName), [pages, pathName]);
 
-  const handlePageSelect = (page: IPage) => {
+  const scrollToPage = (page: IPage) => {
     const { current } = containerRef;
     const segment = SEGMENTS.find(segment => segment.page === page);
     const child = current && segment ? getChildBySegment(current, segment) : null;
@@ -66,6 +67,15 @@ export default function Index() {
   };
 
   useEffect(() => {
+    if (!isInit.current && activePage && focusedSegment) {
+      isInit.current = true;
+      if (focusedSegment.page !== activePage) {
+        scrollToPage(activePage);
+      }
+    }
+  }, [activePage, focusedSegment]);
+
+  useEffect(() => {
     if (focusedSegment?.page && !isScrollingRef.current) {
       Router.push(focusedSegment.page.href, undefined, { scroll: false, shallow: false });
     }
@@ -73,7 +83,7 @@ export default function Index() {
 
   return (
     <>
-      <PageHeader logoHref={pages[0].href} pages={pages} activePage={activePage} onSelect={handlePageSelect} />
+      <PageHeader logoHref={pages[0].href} pages={pages} activePage={activePage} onSelect={scrollToPage} />
       <SegmentContainer ref={containerRef}>
         <>
           {SEGMENTS.map(({ key, Component }) => (
