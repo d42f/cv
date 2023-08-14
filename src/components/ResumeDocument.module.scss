@@ -12,7 +12,7 @@
   font-family: $font-family-serif;
   font-size: $font-size-sm;
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(sm) {
     padding: 2rem;
   }
 
@@ -87,7 +87,7 @@
   display: flex;
   flex-flow: column;
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(sm) {
     flex-flow: row nowrap;
     align-items: center;
   }
@@ -101,15 +101,13 @@
 .photo {
   display: none;
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(sm) {
     display: block;
-    width: 5rem;
     margin: 0 0 0 1rem;
   }
 
   @media print {
     display: block;
-    width: 5rem;
     margin: 0 0 0 1rem;
   }
 }
@@ -145,7 +143,7 @@
   flex-flow: column;
   align-items: flex-start;
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(sm) {
     flex-flow: row nowrap;
   }
 }
@@ -153,7 +151,7 @@
 .sectionLabel {
   text-transform: uppercase;
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(sm) {
     width: 20%;
     margin: 0 1rem 0 0;
   }
@@ -163,7 +161,7 @@
   flex: 1;
   display: flex;
   flex-flow: column;
-  row-gap: 1rem;
+  row-gap: 0.25rem;
 }
 
 .point {
@@ -175,7 +173,7 @@
   display: flex;
   flex-flow: column;
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(sm) {
     flex-flow: row nowrap;
   }
 
@@ -192,7 +190,7 @@
 .pointSubtitle {
   white-space: nowrap;
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(sm) {
     margin: 0 0 0 1rem;
   }
 }

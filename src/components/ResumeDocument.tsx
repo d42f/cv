@@ -149,7 +149,7 @@ export const ResumeDocument = ({ className }: ResumeDocumentProps): JSX.Element 
             <Links items={CONTACTS} />
             <Links items={LINKS} />
           </div>
-          <Image className={styles.photo} src="/avatar_small.jpg" width={80} height={80} alt="" />
+          <Image className={styles.photo} src="/avatar_small.jpg" width={64} height={64} alt="" />
         </section>
         <hr className={styles.separator} />
         <Section label="Summary">
