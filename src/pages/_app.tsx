@@ -6,7 +6,7 @@ const { publicRuntimeConfig } = getConfig();
 
 import '@/styles/globals.scss';
 
-export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+export default function App({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <>
       <Head>
