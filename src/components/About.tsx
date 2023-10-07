@@ -12,7 +12,7 @@ interface AboutProps {
 export const About = ({ className }: AboutProps): JSX.Element => (
   <article className={classNames(styles.wrapper, className)}>
     <aside className={styles.photo}>
-      <Image className={styles.image} src="/avatar.jpg" width={550} height={820} alt="" />
+      <Image className={styles.image} src="/avatar.jpg" width={550} height={820} priority={true} alt="" />
     </aside>
     <main className={styles.info}>
       <header>

@@ -54,7 +54,8 @@ export const useVisible = (
   const win = useWindow();
 
   const hasSupport = !!win?.IntersectionObserver;
-  const frozen = !hasSupport || !element || (!!entry?.isIntersecting && freezeOnceVisible);
+  const isIntersecting = entry ? entry.isIntersecting : false;
+  const frozen = !hasSupport || !element || (isIntersecting && freezeOnceVisible);
 
   useEffect(() => {
     if (frozen) {
@@ -70,5 +71,5 @@ export const useVisible = (
     return () => observer.disconnect();
   }, [element, threshold, root, rootMargin, frozen]);
 
-  return frozen || !!entry?.isIntersecting;
+  return frozen || isIntersecting;
 };

@@ -1,4 +1,4 @@
-import React, { createRef, ReactNode, useEffect } from 'react';
+import React, { CSSProperties, ReactNode, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -116,29 +116,29 @@ interface ResumeDocumentProps {
 }
 
 export const ResumeDocument = ({ className }: ResumeDocumentProps): JSX.Element => {
-  const pageRef = createRef<HTMLDivElement>();
-  const toolbarRef = createRef<HTMLDivElement>();
+  const [toolbarStyles, setToolbarStyles] = useState<Partial<CSSProperties>>();
+  const pageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleWindowRerender = () => {
       const pageRect = pageRef.current?.getBoundingClientRect();
-      if (pageRect && toolbarRef.current) {
-        toolbarRef.current.style.right = `${pageRect.left}px`;
-        toolbarRef.current.style.bottom = '0';
-        if (window.innerHeight > pageRect.bottom) {
-          toolbarRef.current.style.bottom = `${window.innerHeight - pageRect.bottom}px`;
-        }
+      if (pageRect) {
+        setToolbarStyles({
+          right: `${pageRect.left}px`,
+          bottom: window.innerHeight > pageRect.bottom ? `${window.innerHeight - pageRect.bottom}px` : 0,
+        });
       }
     };
 
     handleWindowRerender();
     window.addEventListener('resize', handleWindowRerender);
     window.addEventListener('scroll', handleWindowRerender);
+
     return () => {
       window.removeEventListener('resize', handleWindowRerender);
       window.removeEventListener('scroll', handleWindowRerender);
     };
-  });
+  }, []);
 
   return (
     <div className={classNames(styles.wrapper, className)}>
@@ -186,7 +186,7 @@ export const ResumeDocument = ({ className }: ResumeDocumentProps): JSX.Element 
           <p>{interests}</p>
         </Section>
       </div>
-      <footer className={styles.toolbar} ref={toolbarRef}>
+      <footer className={classNames(styles.toolbar, toolbarStyles && styles.toolbarVisible)} style={toolbarStyles}>
         <Link className={styles.backBtn} href="/">
           <FaHome className={styles.icon} />
         </Link>

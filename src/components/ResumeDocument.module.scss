@@ -30,6 +30,11 @@
   position: fixed;
   right: 0;
   bottom: 0;
+  visibility: hidden;
+
+  &Visible {
+    visibility: visible;
+  }
 
   @media print {
     display: none;

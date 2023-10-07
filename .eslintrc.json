@@ -20,5 +20,6 @@
   },
   "settings": {
     "@typescript-eslint/parser": [".ts", ".tsx"]
-  }
+  },
+  "ignorePatterns": ["next.config.js"]
 }
