@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import useSWRMutation from 'swr/mutation';
 
 import { email, phone, telegram } from '@/resume';
+import { isServerError } from '@/utils/response';
 import { poster } from '@/utils/request';
 import { linkEmail, linkPhone, linkTelegram } from '@/utils/link';
 import { formatPhone } from '@/utils/phone';
@@ -32,9 +33,14 @@ export const Contacts = ({ className }: ContactsProps): JSX.Element => {
   const handleFormSubmit = async (formData: MessageMeData) => {
     try {
       setIsFetching(true);
-      await trigger(formData);
+      const response = await trigger(formData);
+      if (isServerError(response)) {
+        throw new Error(response.message);
+      }
       setIsSuccess(true);
       await sleep(2000);
+    } catch (error) {
+      // TODO: add indication
     } finally {
       setIsFetching(false);
       setIsSuccess(false);
