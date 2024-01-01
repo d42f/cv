@@ -1,6 +1,7 @@
 import React, { ComponentType, useCallback, useMemo } from 'react';
 import { usePathname } from 'next/navigation';
 import Router from 'next/router';
+import { useAnchorObserver } from 'react-use-observer-hooks';
 
 import { IPage } from '@/models/IPage';
 import { SegmentContainer } from '@/components/SegmentContainer';
@@ -10,7 +11,6 @@ import { Timeline } from '@/components/Timeline';
 import { About } from '@/components/About';
 import { Contacts } from '@/components/Contacts';
 import { PageFooter } from '@/components/PageFooter';
-import { useAnchorObserver } from '@/hooks/useAnchorObserver';
 
 interface ISegment {
   page: IPage;

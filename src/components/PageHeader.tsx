@@ -1,7 +1,7 @@
 import classNames from 'classnames';
+import { useWasScrolled } from 'react-use-observer-hooks';
 
 import { IPage } from '@/models/IPage';
-import { useWasScrolled } from '@/hooks/useWasScrolled';
 import { Logo } from '@/components/Logo';
 import { Menu } from '@/components/Menu';
 import styles from './PageHeader.module.scss';
