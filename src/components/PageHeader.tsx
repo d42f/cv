@@ -10,11 +10,11 @@ interface PageHeaderProps {
   className?: string;
   logoHref: string;
   pages: IPage[];
-  activePage?: IPage;
+  currentPage?: IPage;
   onSelect?: (page: IPage) => void;
 }
 
-export const PageHeader = ({ className, logoHref, pages, activePage, onSelect }: PageHeaderProps): JSX.Element => {
+export const PageHeader = ({ className, logoHref, pages, currentPage, onSelect }: PageHeaderProps): JSX.Element => {
   const isScrolled = useWasScrolled();
 
   return (
@@ -22,7 +22,7 @@ export const PageHeader = ({ className, logoHref, pages, activePage, onSelect }:
       <div className={styles.container}>
         <div className={styles.content}>
           <Logo className={styles.logo} href={logoHref} />
-          <Menu className={styles.menu} items={pages} active={activePage} onSelect={onSelect} />
+          <Menu className={styles.menu} items={pages} active={currentPage} onSelect={onSelect} />
         </div>
       </div>
     </header>

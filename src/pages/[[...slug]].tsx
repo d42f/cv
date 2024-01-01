@@ -49,11 +49,11 @@ export default function Index() {
     onAnchorChange: changeRouter,
   });
 
-  const activePage = useMemo(() => PAGES.find(page => page.href === pathName), [pathName]);
+  const currentPage = useMemo(() => PAGES.find(page => page.href === pathName), [pathName]);
 
   return (
     <>
-      <PageHeader logoHref={PAGES[0].href} pages={PAGES} activePage={activePage} />
+      <PageHeader logoHref={PAGES[0].href} pages={PAGES} currentPage={currentPage} />
       <SegmentContainer ref={containerRef}>
         {SEGMENTS.map(({ page, Component }) => (
           <Segment key={page.href}>
