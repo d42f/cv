@@ -15,22 +15,24 @@ export const Menu = <T extends { href: string; label: string }>({
   items,
   active,
   onSelect,
-}: MenuProps<T>): JSX.Element => (
-  <nav className={classNames(styles.wrapper, className)}>
-    <ul className={styles.list}>
-      {items.map((item, index) => (
-        <li className={styles.item} key={index}>
-          <Link
-            className={classNames(styles.link, { [styles.linkActive]: item === active })}
-            href={item.href}
-            scroll={false}
-            shallow={false}
-            onClick={() => onSelect?.(item)}
-          >
-            {item.label}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  </nav>
-);
+}: MenuProps<T>): JSX.Element => {
+  return (
+    <nav className={classNames(styles.wrapper, className)}>
+      <ul className={styles.list}>
+        {items.map((item, index) => (
+          <li className={styles.item} key={index}>
+            <Link
+              className={classNames(styles.link, { [styles.linkActive]: item === active })}
+              href={item.href}
+              scroll={false}
+              shallow={true}
+              onClick={() => onSelect?.(item)}
+            >
+              {item.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
