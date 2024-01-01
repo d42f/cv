@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
-import { FaBookmark } from 'react-icons/fa';
 import classNames from 'classnames';
+import { FaBookmark } from 'react-icons/fa';
+import { useVisible } from 'react-use-observer-hooks';
 
 import { experience } from '@/resume';
 import { formatDateRange } from '@/utils/date';
-import { useVisible } from '@/hooks/useIntersectionObserver';
 import { SectionTitle } from '@/components/SectionTitle';
 import styles from './Timeline.module.scss';
 
