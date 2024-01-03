@@ -43,13 +43,13 @@ export default function Index() {
     Router.push(anchor, undefined, { scroll: false, shallow: false });
   }, []);
 
-  const { ref: containerRef } = useAnchorObserver<HTMLDivElement>({
+  const { ref: containerRef, focusedAnchor } = useAnchorObserver<HTMLDivElement>({
     anchors: ANCHORS,
     currentAnchor: pathName,
     onAnchorChange: changeRouter,
   });
 
-  const currentPage = useMemo(() => PAGES.find(page => page.href === pathName), [pathName]);
+  const currentPage = useMemo(() => PAGES.find(page => page.href === focusedAnchor), [focusedAnchor]);
 
   return (
     <>
