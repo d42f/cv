@@ -161,6 +161,17 @@ export const ResumeDocument = ({ className }: ResumeDocumentProps): JSX.Element 
         <Section label="Summary">
           <p>{summary}</p>
         </Section>
+        <hr className={styles.separator} />
+        <Section label="Skills">
+          <div className={styles.point}>
+            <p>
+              <strong>Technologies</strong>: {skills}
+            </p>
+            <p>
+              <strong>Methodologies</strong>: {methodologies}
+            </p>
+          </div>
+        </Section>
         {!!EXPERIENCE_POINTS.length && (
           <>
             <hr className={styles.separator} />
@@ -173,17 +184,6 @@ export const ResumeDocument = ({ className }: ResumeDocumentProps): JSX.Element 
             <Section label="Education" points={EDUCATION_POINTS} />
           </>
         )}
-        <hr className={styles.separator} />
-        <Section label="Skills">
-          <div className={styles.point}>
-            <p>
-              <strong>Technologies</strong>: {skills}
-            </p>
-            <p>
-              <strong>Methodologies</strong>: {methodologies}
-            </p>
-          </div>
-        </Section>
         <hr className={styles.separator} />
         <Section label="Languages">
           <p>{languages}</p>
