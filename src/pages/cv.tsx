@@ -1,5 +1,5 @@
 import { ResumeDocument } from '@/components/ResumeDocument';
 
-export default function Resume() {
+export default function Page() {
   return <ResumeDocument />;
 }

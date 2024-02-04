@@ -60,8 +60,14 @@ const EDUCATION_POINTS: IPoint[] = education.map(({ title, place, date_from, dat
   description,
 }));
 
-const Links = ({ items }: { items: Array<{ label: string; href: string }> }): JSX.Element => (
-  <ul className={styles.contacts}>
+const Links = ({
+  className,
+  items,
+}: {
+  className?: string;
+  items: Array<{ label: string; href: string }>;
+}): JSX.Element => (
+  <ul className={classNames(styles.contacts, className)}>
     {items.map(({ label, href }, index) => (
       <li className={styles.contactsItem} key={index}>
         <a href={href} target="_blank">
@@ -147,7 +153,7 @@ export const ResumeDocument = ({ className }: ResumeDocumentProps): JSX.Element 
           <div className={styles.description}>
             <h1 className={styles.name}>{name}</h1>
             <Links items={CONTACTS} />
-            <Links items={LINKS} />
+            <Links className={styles.noPrint} items={LINKS} />
           </div>
           <Image className={styles.photo} src="/avatar_small.jpg" width={64} height={64} alt="" />
         </section>

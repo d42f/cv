@@ -12,12 +12,7 @@ import { About } from '@/components/About';
 import { Contacts } from '@/components/Contacts';
 import { PageFooter } from '@/components/PageFooter';
 
-interface ISegment {
-  page: IPage;
-  Component: ComponentType;
-}
-
-const SEGMENTS: ISegment[] = [
+const SEGMENTS: Array<{ page: IPage; Component: ComponentType }> = [
   {
     page: { href: '/', label: 'About' },
     Component: About,
@@ -36,7 +31,7 @@ const PAGES = SEGMENTS.map(({ page }) => page);
 
 const ANCHORS = SEGMENTS.map(segment => segment.page.href);
 
-export default function Index() {
+export default function Page() {
   const pathName = usePathname();
 
   const changeRouter = useCallback((anchor: string) => {

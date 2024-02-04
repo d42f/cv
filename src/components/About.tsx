@@ -27,8 +27,8 @@ export const About = ({ className }: AboutProps): JSX.Element => (
         <span>{methodologies}</span>
       </section>
       <footer className={styles.nav}>
-        <Link className={styles.navBtnPrimary} href="/resume">
-          My Resume
+        <Link className={styles.navBtnPrimary} href="/cv">
+          My CV
         </Link>
         <Link className={styles.navBtnLight} href="/contacts">
           My contacts
