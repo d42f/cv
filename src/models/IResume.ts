@@ -18,6 +18,7 @@ export interface IResume {
   languages: string;
   interests: string;
   summary: string;
+  greeting: string;
 
   speeches: Array<{
     title: string;
@@ -34,9 +35,5 @@ export interface IResume {
     }
   >;
 
-  education: Array<
-    IResumePoint & {
-      place: string;
-    }
-  >;
+  education: Array<IResumePoint>;
 }

@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { methodologies, name, position, skills, summary } from '@/resume';
+import { greeting, methodologies, name, position, skills, summary } from '@/resume';
 import styles from './About.module.scss';
 
 interface AboutProps {
@@ -19,7 +19,9 @@ export const About = ({ className }: AboutProps): JSX.Element => (
         <h2>{name}</h2>
         <h3>{position}</h3>
       </header>
-      <p>{summary}</p>
+      <p>
+        {greeting} {summary}
+      </p>
       <section className={styles.experience}>
         <strong>Skills:</strong>
         <span>{skills}</span>

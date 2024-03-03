@@ -8,6 +8,7 @@ export const {
   education,
   email,
   experience,
+  greeting,
   interests,
   languages,
   links,

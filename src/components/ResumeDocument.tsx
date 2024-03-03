@@ -54,8 +54,8 @@ const EXPERIENCE_POINTS: IPoint[] = experience.map(
   }),
 );
 
-const EDUCATION_POINTS: IPoint[] = education.map(({ title, place, date_from, date_to, description }) => ({
-  title: `${place}${title ? ` - ${title}` : ''}`,
+const EDUCATION_POINTS: IPoint[] = education.map(({ title, date_from, date_to, description }) => ({
+  title,
   ...(date_from || date_to ? { subtitle: formatDateRange(date_from, date_to, DATE_MASK) } : null),
   description,
 }));

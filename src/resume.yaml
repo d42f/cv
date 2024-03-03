@@ -12,9 +12,10 @@ links:
   codewars: https://www.codewars.com/users/d42f
 skills: TypeScript, JavaScript, React, Angular, Redux & RTK, SCSS, styled-components, SPA, PWA, Node.js, REST API, WebRTC
 methodologies: Agile, Kanban, Scrum
-languages: English (read, write, speak), Russian (native)
-interests: Traveling, Reading, Cooking, Crossfit, Videogames
-summary: Hi! My name is Dmitrii and I live in Berlin, Germany.
+languages: English (B2), Russian (fluent)
+interests: Traveling, Reading, Cooking, Crossfit, Video-games
+greeting: My name is Dmitrii and I live in Berlin, Germany.
+summary:
   I have more than 10 years of experience with running projects from start to a production deployment, as well as supporting huge codebases.
   Know how to deploy web projects and manage the infrastructure they’re running on.
   Like to learn new stuff and tune my skills to be keep up with current state of software development.
@@ -34,14 +35,15 @@ experience:
     position: Senior Frontend Developer
     date_from: 2019-09
     date_to: null
-    description: Getsitecontrol is a service for creating and integrating forms and promo widgets into your site.
+    description: Getsitecontrol is a service for creating and integrating forms and promo widgets into your website.
       I joined the team when they were finishing the work on a new version of the product.
-      Base functions were already implemented. I worked on the remaining features and fixed known bugs.
+      Major functions were already implemented. I worked on the remaining features and fixed known bugs.
       When we released a new version I took over the support of the administration panel and the implementation of new features.
     achievements:
-      - Refactoring old code and releasing production ready version.
-      - Improving configurability of the project so our team was able to release the new service "Getform" in short time beacuse it was based on an existing project.
-      - Refactoring existing styles and typography so we could implement pixelperfect testing.
+      - Migrated old code base with AngularJS to a new stack with React and RTK
+      - Refactored old code base and reduced TBT (Total Blocking Time) in 60%.
+      - Improved configurability of the product and it allowed to release the new one "Getform" based on the current codebase.
+      - Refactored existing styles and typography so we could implement pixel-perfect testing.
   - title: Novakid
     position: Senior Frontend Developer (Tech Lead)
     date_from: 2017-08
@@ -52,9 +54,9 @@ experience:
       It was my first time going from idea to implementation and project highload (more than 1000 active video calls between users a day).
       It all became possible thanks to company CEO Maxim Azarov.
     achievements:
-      - Research and integration of our platform with open source media server "Kurento"
-      - Designing NodeJS application for making video calls between teacher and student in browser via WebRTC technology.
-      - Planning and management new releases of the platform.
+      - Researched and integrated our platform with the open source media server "Kurento". It allowed us not to avoid developing our own solution and launch the first version faster.
+      - Designed NodeJS application for making video calls between teacher and student in browser via WebRTC technology.
+      - Planned and managed all new releases of the platform for about a year when I was a Tech Lead.
   - title: ASDTech
     position: Senior Frontend Developer
     date_from: 2013-05
@@ -64,23 +66,22 @@ experience:
       Our main products were cloud storages for mobile operators such as Vodafone, Vestel, MegaFon.
       My role was development of the mobile and web client as well as mentoring junior frontend developers.
     achievements:
-      - Creating deeply customizable architecture for one of the major company product "Cloudike".
-      - Developing architecture for company's white-label product that made it possible to support about ten customers by only one developer.
-      - Developing SSO client that was used for company's web, mobile and desktop clients.
+      - Designed deeply customizable architecture for one of the major company's product "Cloudike".
+      - Developed core code base and infrastructure for the major product.
+      - Implemented an SSO client for using on web, mobile and desktop clients.
   - title: Onlyoffice (TeamLab)
     position: Frontend Developer
     date_from: 2009-09
     date_to: 2012-06
-    description: It was my first expirience in large company with excellent teammates who helped me boost my skills.
-      Before that my experince was limited with small or medium sites based on CMS.
-      I was very lucky to have a chance to work in such an experienced team with a great teamlead.
+    description: It was my first experience in large company with excellent teammates who helped me boost my skills.
+      Before that my experience was limited with small or medium sites based on CMS.
+      I was very lucky to have a chance to work in such an experienced team with a great team-lead.
     achievements:
-      - Taking part in development of a module for the video conferences based on Red5 server.
-      - Developing web client based on XMPP protocol for part of company's profuct "TM Talk".
-      - Developing API SDK for SPA version of the product.
+      - Took part in development of a module for video communication based on Red5 server.
+      - Developed web client based on XMPP protocol for of the company's product "TM Talk".
+      - Implemented API SDK for our major product by documentation.
 education:
-  - title: Department of Radio Electronics and Computer Systems
-    place: Vladimir State University
+  - title: Vladimir State University / Department of Radio Electronics and Computer Systems
     date_from: '2004-09'
     date_to: '2009-05'
-    description: Master of Computer Science and Engineering, BCA 0610377
+    description: 'Major: Master of Computer Science and Engineering, BCA 0610377'
