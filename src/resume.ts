@@ -1,8 +1,6 @@
 import { IResume } from '@/models/IResume';
 import yamlResume from './resume.yaml';
 
-const resume = yamlResume as IResume;
-
 export const {
   address,
   education,
@@ -20,4 +18,4 @@ export const {
   speeches,
   summary,
   telegram,
-} = resume;
+} = yamlResume as IResume;

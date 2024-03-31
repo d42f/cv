@@ -9,7 +9,7 @@ const nextConfig = {
     includePaths: [path.join(__dirname, 'styles')],
   },
   publicRuntimeConfig: {
-    appName: 'Dmitrii Frolov`s CV',
+    appName: 'Dmitrii Frolov CV',
     author: 'dmitri.frolof@gmail.com',
   },
   webpack(config) {
@@ -18,7 +18,7 @@ const nextConfig = {
       use: 'yaml-loader',
     });
     return config;
-  }
+  },
 };
 
 module.exports = nextConfig;
