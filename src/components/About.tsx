@@ -1,9 +1,18 @@
+import { Fragment } from 'react';
 import classNames from 'classnames';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { greeting, methodologies, name, position, skills, summary } from '@/resume';
+import { greeting, name, position, skills, summary } from '@/resume';
 import styles from './About.module.scss';
+
+const SKILLS = [
+  { label: 'Frontend', description: skills.frontend.join(', ') },
+  ...(skills.backend.length ? [{ label: 'Backend & APIs', description: skills.backend.join(', ') }] : []),
+  ...(skills.tooling.length ? [{ label: 'Build & Tooling', description: skills.tooling.join(', ') }] : []),
+  ...(skills.testing.length ? [{ label: 'Testing', description: skills.testing.join(', ') }] : []),
+  ...(skills.methodologies.length ? [{ label: 'Methodologies', description: skills.methodologies.join(', ') }] : []),
+];
 
 interface AboutProps {
   className?: string;
@@ -23,10 +32,12 @@ export const About = ({ className }: AboutProps): JSX.Element => (
         {greeting} {summary}
       </p>
       <section className={styles.experience}>
-        <strong>Skills:</strong>
-        <span>{skills}</span>
-        <strong>Workflow:</strong>
-        <span>{methodologies}</span>
+        {SKILLS.map((skill, index) => (
+          <Fragment key={index}>
+            <strong>{skill.label}</strong>
+            <span>{skill.description}</span>
+          </Fragment>
+        ))}
       </section>
       <footer className={styles.nav}>
         <Link className={styles.navBtnPrimary} href="/cv">

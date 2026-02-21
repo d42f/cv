@@ -13,20 +13,22 @@ export interface IResume {
   telegram?: string;
   address: string;
   links: Record<string, string>;
-  skills: string;
-  methodologies: string;
+  skills: {
+    frontend: string[];
+    backend: string[];
+    tooling: string[];
+    testing: string[];
+    methodologies: string[];
+  };
   languages: string;
-  interests: string;
   summary: string;
   greeting: string;
-
   speeches: Array<{
     title: string;
     date: string;
     link: string;
     description: string;
   }>;
-
   experience: Array<
     IResumePoint & {
       position: string;
@@ -34,6 +36,5 @@ export interface IResume {
       achievements: string[];
     }
   >;
-
   education: Array<IResumePoint>;
 }

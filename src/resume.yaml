@@ -6,20 +6,38 @@ address: Berlin, Germany
 links:
   github: https://github.com/d42f
   linkedin: https://www.linkedin.com/in/dmitrifrolof/
-  twitter: https://twitter.com/born2bunicorn
   instagram: https://www.instagram.com/born2bunicorn/
   facebook: https://www.facebook.com/dmitri.frolof
   codewars: https://www.codewars.com/users/d42f
-skills: TypeScript, JavaScript, React, Angular, Redux & RTK, SCSS, styled-components, SPA, PWA, Node.js, REST API, WebRTC
-methodologies: Agile, Kanban, Scrum
+skills:
+  frontend:
+    - TypeScript
+    - React
+    - Angular
+    - Redux & RTK
+    - SCSS
+    - SPA
+    - PWA
+  backend:
+    - Node.js
+    - REST API
+    - WebRTC
+  tooling:
+    - Webpack
+    - Vite
+  testing:
+    - Jest
+    - Cypress
+    - Playwright
+  methodologies:
+    - Agile
+    - Scrum
+    - Kanban
+    - Code Review
+    - Mentoring
 languages: English (B2), Russian (fluent)
-interests: Traveling, Reading, Cooking, Crossfit, Video-games
 greeting: My name is Dmitrii and I live in Berlin, Germany.
-summary:
-  I have more than 10 years of experience with running projects from start to a production deployment, as well as supporting huge codebases.
-  Know how to deploy web projects and manage the infrastructure they’re running on.
-  Like to learn new stuff and tune my skills to be keep up with current state of software development.
-
+summary: Senior Frontend Developer with 10+ years of experience building scalable web applications from concept to production. Specialized in React, TypeScript, and Node.js, with a strong focus on frontend architecture and performance optimization. Have experience leading frontend teams and taking products from early-stage development to highload production environments serving thousands of concurrent users.
 speeches:
   - title: How to buy a bike (Как купить велосипед)
     date: 2014-11-27
@@ -32,54 +50,43 @@ speeches:
 
 experience:
   - title: Getsitecontrol
-    position: Senior Frontend Developer
+    position: Senior Frontend Engineer
     date_from: 2019-09
     date_to: null
-    description: Getsitecontrol is a service for creating and integrating forms and promo widgets into your website.
-      I joined the team when they were finishing the work on a new version of the product.
-      Major functions were already implemented. I worked on the remaining features and fixed known bugs.
-      When we released a new version I took over the support of the administration panel and the implementation of new features.
+    description: Getsitecontrol is a SaaS platform for creating and integrating forms, promo widgets, and email marketing campaigns into websites.
     achievements:
-      - Migrated old code base with AngularJS to a new stack with React and RTK
-      - Refactored old code base and reduced TBT (Total Blocking Time) in 60%.
-      - Improved configurability of the product and it allowed to release the new one "Getform" based on the current codebase.
-      - Refactored existing styles and typography so we could implement pixel-perfect testing.
+      - Migrated legacy AngularJS codebase to React and RTK, refactoring the architecture and reducing Total Blocking Time (TBT) by 60%.
+      - Improved product configurability, enabling the launch of a new standalone product "Getform" based on the existing codebase.
+      - Refactored styles and typography to support pixel-perfect testing across the platform.
+      - Developed an email campaign builder with support for template creation and integrations with third-party email marketing services.
   - title: Novakid
-    position: Senior Frontend Developer (Tech Lead)
+    position: Senior Frontend Engineer (Tech Lead)
     date_from: 2017-08
     date_to: 2019-09
-    description: Novakid is an online language school for children.
-      Service contains a media server for making video calls between teacher and student in browser and a working space with slides and mini games and whiteboard for lessons.
-      During my work there I went from being a single frontend developer to taking over the role of tech lead.
-      It was my first time going from idea to implementation and project highload (more than 1000 active video calls between users a day).
-      It all became possible thanks to company CEO Maxim Azarov.
+    description: Novakid is an online language school for children, featuring real-time video lessons with an interactive whiteboard, slides, and mini-games.
     achievements:
-      - Researched and integrated our platform with the open source media server "Kurento". It allowed us not to avoid developing our own solution and launch the first version faster.
-      - Designed NodeJS application for making video calls between teacher and student in browser via WebRTC technology.
-      - Planned and managed all new releases of the platform for about a year when I was a Tech Lead.
+      - Researched and integrated the open-source media server Kurento, enabling WebRTC-based video calls in the browser and accelerating the launch of the first product version.
+      - Designed and built a Node.js application for real-time video communication between teachers and students, handling 1000+ concurrent active calls per day.
+      - Grew from sole frontend developer to Tech Lead, managing a team of 4 frontend developers and overseeing all platform releases.
   - title: ASDTech
-    position: Senior Frontend Developer
+    position: Senior Frontend Engineer
     date_from: 2013-05
     date_to: 2017-08
-    description:
-      During my four years with ASDTech I participated in large projects for customers as well as in some internal company projects.
-      Our main products were cloud storages for mobile operators such as Vodafone, Vestel, MegaFon.
-      My role was development of the mobile and web client as well as mentoring junior frontend developers.
+    description: Cloud storage solutions provider for major mobile operators including Vodafone, Vestel, and MegaFon.
     achievements:
-      - Designed deeply customizable architecture for one of the major company's product "Cloudike".
-      - Developed core code base and infrastructure for the major product.
-      - Implemented an SSO client for using on web, mobile and desktop clients.
+      - Designed a deeply customizable frontend architecture for the company's core product Cloudike, used by millions of users across multiple operators.
+      - Developed the core codebase and infrastructure for web and mobile clients.
+      - Implemented an SSO client for seamless authentication across web, mobile, and desktop platforms.
+      - Mentored junior frontend developers, conducting code reviews and sharing best practices.
   - title: Onlyoffice (TeamLab)
-    position: Frontend Developer
+    position: Frontend Engineer
     date_from: 2009-09
     date_to: 2012-06
     description: It was my first experience in large company with excellent teammates who helped me boost my skills.
-      Before that my experience was limited with small or medium sites based on CMS.
-      I was very lucky to have a chance to work in such an experienced team with a great team-lead.
     achievements:
-      - Took part in development of a module for video communication based on Red5 server.
-      - Developed web client based on XMPP protocol for of the company's product "TM Talk".
-      - Implemented API SDK for our major product by documentation.
+      - Developed a web client based on the XMPP protocol for the company's messaging product TM Talk.
+      - Took part in development of a video communication module based on the Red5 media server.
+      - Implemented an API SDK for the major product based on technical documentation.
 education:
   - title: Vladimir State University / Department of Radio Electronics and Computer Systems
     date_from: '2004-09'

@@ -83,7 +83,7 @@
 }
 
 .separator {
-  margin: 0.5rem 0;
+  margin: 1rem 0;
   border: 0;
   border-top: 1px solid $gray-400;
 }
@@ -118,11 +118,14 @@
 
 .description {
   flex: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.125rem;
 }
 
 .name {
   font-family: inherit;
-  font-size: $h4-font-size;
+  font-size: $h2-font-size;
   font-weight: $font-weight-normal;
 }
 
@@ -165,12 +168,13 @@
   flex: 1;
   display: flex;
   flex-flow: column;
-  row-gap: 0.25rem;
+  row-gap: 0.75rem;
 }
 
 .point {
   display: flex;
   flex-flow: column;
+  gap: 0.25rem;
 }
 
 .pointHeader {

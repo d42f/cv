@@ -4,20 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FaHome, FaPrint } from 'react-icons/fa';
 
-import {
-  education,
-  email,
-  experience,
-  interests,
-  languages,
-  links,
-  methodologies,
-  name,
-  phone,
-  skills,
-  summary,
-  telegram,
-} from '@/resume';
+import { education, email, experience, languages, links, name, phone, skills, summary, telegram } from '@/resume';
 import { formatDateRange } from '@/utils/date';
 import { formatPhone } from '@/utils/phone';
 import { linkEmail, linkPhone, linkTelegram } from '@/utils/link';
@@ -39,10 +26,18 @@ const CONTACTS = [
 ];
 
 const LINKS = [
-  { label: 'Github', href: links.github },
   { label: 'LinkedIn', href: links.linkedin },
+  { label: 'Github', href: links.github },
   { label: 'Twitter', href: links.twitter },
   { label: 'CodeWars', href: links.codewars },
+].filter(link => link.href);
+
+const SKILLS = [
+  { label: 'Frontend', description: skills.frontend.join(', ') },
+  ...(skills.backend.length ? [{ label: 'Backend & APIs', description: skills.backend.join(', ') }] : []),
+  ...(skills.tooling.length ? [{ label: 'Build & Tooling', description: skills.tooling.join(', ') }] : []),
+  ...(skills.testing.length ? [{ label: 'Testing', description: skills.testing.join(', ') }] : []),
+  ...(skills.methodologies.length ? [{ label: 'Methodologies', description: skills.methodologies.join(', ') }] : []),
 ];
 
 const EXPERIENCE_POINTS: IPoint[] = experience.map(
@@ -164,12 +159,11 @@ export const ResumeDocument = ({ className }: ResumeDocumentProps): JSX.Element 
         <hr className={styles.separator} />
         <Section label="Skills">
           <div className={styles.point}>
-            <p>
-              <strong>Technologies</strong>: {skills}
-            </p>
-            <p>
-              <strong>Methodologies</strong>: {methodologies}
-            </p>
+            {SKILLS.map((skill, index) => (
+              <p key={index}>
+                <strong>{skill.label}</strong>: {skill.description}
+              </p>
+            ))}
           </div>
         </Section>
         {!!EXPERIENCE_POINTS.length && (
@@ -184,13 +178,6 @@ export const ResumeDocument = ({ className }: ResumeDocumentProps): JSX.Element 
             <Section label="Education" points={EDUCATION_POINTS} />
           </>
         )}
-        <hr className={styles.separator} />
-        <Section label="Languages">
-          <p>{languages}</p>
-        </Section>
-        <Section label="Interests">
-          <p>{interests}</p>
-        </Section>
       </div>
       <footer className={classNames(styles.toolbar, toolbarStyles && styles.toolbarVisible)} style={toolbarStyles}>
         <Link className={styles.backBtn} href="/">
