@@ -48,7 +48,7 @@ experience:
       - Improved product configurability, enabling the launch of a new standalone product "Getform" based on the existing codebase.
       - Refactored styles and typography to support pixel-perfect testing across the platform.
       - Developed an email campaign builder with support for template creation and integrations with third-party email marketing services.
-  title: 
+  - title: Simplenight
     position: Senior Software Engineer (Contract)
     date_from: 2024-12
     date_to: 2025-06
