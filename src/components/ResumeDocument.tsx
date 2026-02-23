@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FaHome, FaPrint } from 'react-icons/fa';
 
-import { education, email, experience, languages, links, name, phone, skills, summary, telegram } from '@/resume';
+import { education, email, experience, links, name, phone, skills, summary, telegram } from '@/resume';
 import { formatDateRange } from '@/utils/date';
 import { formatPhone } from '@/utils/phone';
 import { linkEmail, linkPhone, linkTelegram } from '@/utils/link';
