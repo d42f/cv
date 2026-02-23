@@ -99,11 +99,14 @@ const Section = ({
         <Point title={title} subtitle={subtitle} key={index}>
           {description && <p>{description}</p>}
           {achievements && (
-            <ul>
-              {achievements.map((achievement: string, index: number) => (
-                <li key={index}>{achievement}</li>
-              ))}
-            </ul>
+            <>
+              <b>Achievements:</b>
+              <ul>
+                {achievements.map((achievement: string, index: number) => (
+                  <li key={index}>{achievement}</li>
+                ))}
+              </ul>
+            </>
           )}
         </Point>
       ))}
