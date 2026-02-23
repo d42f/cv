@@ -13,7 +13,7 @@ skills:
   frontend:
     - TypeScript
     - React
-    - Angular
+    - Next.js
     - Redux & RTK
     - SCSS
     - SPA
@@ -60,7 +60,7 @@ experience:
       - Refactored styles and typography to support pixel-perfect testing across the platform.
       - Developed an email campaign builder with support for template creation and integrations with third-party email marketing services.
   - title: Novakid
-    position: Senior Frontend Engineer (Tech Lead)
+    position: Senior Software Engineer (Tech Lead)
     date_from: 2017-08
     date_to: 2019-09
     description: Novakid is an online language school for children, featuring real-time video lessons with an interactive whiteboard, slides, and mini-games.
