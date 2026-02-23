@@ -35,22 +35,11 @@ skills:
     - Kanban
     - Code Review
     - Mentoring
-languages: English (B2), Russian (fluent)
 greeting: My name is Dmitrii and I live in Berlin, Germany.
 summary: Senior Frontend Developer with 10+ years of experience building scalable web applications from concept to production. Specialized in React, TypeScript, and Node.js, with a strong focus on frontend architecture and performance optimization. Have experience leading frontend teams and taking products from early-stage development to highload production environments serving thousands of concurrent users.
-speeches:
-  - title: How to buy a bike (Как купить велосипед)
-    date: 2014-11-27
-    link: https://www.youtube.com/watch?v=LArDmHECVig
-    description: It was my first public speech.
-  - title: One does not simply switch from AngularJS to Angular2.
-    date: 2015-02-28
-    presentation: https://docs.google.com/presentation/d/16zK4XFgAUbOXswwzUiG1Ij8lWS0BLttFNuCoiAlOXzk/edit
-    description: My second public speech. Unfortunately there is no video.
-
 experience:
   - title: Getsitecontrol
-    position: Senior Frontend Engineer
+    position: Senior Frontend Engineer (Contract)
     date_from: 2019-09
     date_to: null
     description: Getsitecontrol is a SaaS platform for creating and integrating forms, promo widgets, and email marketing campaigns into websites.
@@ -59,6 +48,14 @@ experience:
       - Improved product configurability, enabling the launch of a new standalone product "Getform" based on the existing codebase.
       - Refactored styles and typography to support pixel-perfect testing across the platform.
       - Developed an email campaign builder with support for template creation and integrations with third-party email marketing services.
+  title: 
+    position: Senior Software Engineer (Contract)
+    date_from: 2024-12
+    date_to: 2025-06
+    description: Simplenight is a white-label booking platform for hotels, events, flights, and entertainment.
+    achievements:
+      - Reduced Total Blocking Time (TBT) by 93% — from 8.7s to 0.6s — through performance optimization and SSR improvements.
+      - Made significant contributions to the internal component library and introduced Storybook, streamlining collaboration with the design team.
   - title: Novakid
     position: Senior Software Engineer (Tech Lead)
     date_from: 2017-08
@@ -92,3 +89,13 @@ education:
     date_from: '2004-09'
     date_to: '2009-05'
     description: 'Major: Master of Computer Science and Engineering, BCA 0610377'
+speeches:
+  - title: How to buy a bike (Как купить велосипед)
+    date: 2014-11-27
+    link: https://www.youtube.com/watch?v=LArDmHECVig
+    description: It was my first public speech.
+  - title: One does not simply switch from AngularJS to Angular2.
+    date: 2015-02-28
+    presentation: https://docs.google.com/presentation/d/16zK4XFgAUbOXswwzUiG1Ij8lWS0BLttFNuCoiAlOXzk/edit
+    description: My second public speech. Unfortunately there is no video.
+languages: English (B2), Russian (fluent)
