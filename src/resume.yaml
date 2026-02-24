@@ -21,10 +21,12 @@ skills:
   backend:
     - Node.js
     - REST API
+    - GraphQL
     - WebRTC
   tooling:
     - Webpack
     - Vite
+    - AI coding tools
   testing:
     - Jest
     - Cypress
@@ -36,7 +38,7 @@ skills:
     - Code Review
     - Mentoring
 greeting: My name is Dmitrii and I live in Berlin, Germany.
-summary: Senior Frontend Developer with 10+ years of experience building scalable web applications from concept to production. Specialized in React, TypeScript, and Node.js, with a strong focus on frontend architecture and performance optimization. Have experience leading frontend teams and taking products from early-stage development to highload production environments serving thousands of concurrent users.
+summary: Senior Software Engineer with 10+ years of experience building scalable web applications from concept to production. Specialized in React, TypeScript, and Node.js, with a strong focus on frontend architecture and performance optimization. Have experience leading frontend teams and taking products from early-stage development to highload production environments serving thousands of concurrent users.
 experience:
   - title: Getsitecontrol
     position: Senior Frontend Engineer (Contract)
