@@ -31,6 +31,7 @@ skills:
     - Jest
     - Cypress
     - Playwright
+    - Storybook
   methodologies:
     - Agile
     - Scrum
