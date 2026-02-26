@@ -9,7 +9,7 @@ const footerLinks = [
   { label: 'Twitter', Icon: FaTwitter, href: links.twitter },
   { label: 'Instagram', Icon: FaInstagram, href: links.instagram },
   { label: 'Facebook', Icon: FaFacebookF, href: links.facebook },
-];
+].filter(link => !!link.href);
 
 interface PageFooterProps {
   className?: string;
