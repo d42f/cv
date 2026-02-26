@@ -21,14 +21,17 @@ skills:
   backend:
     - Node.js
     - REST API
+    - GraphQL
     - WebRTC
   tooling:
     - Webpack
     - Vite
+    - AI coding tools
   testing:
     - Jest
     - Cypress
     - Playwright
+    - Storybook
   methodologies:
     - Agile
     - Scrum
@@ -36,7 +39,7 @@ skills:
     - Code Review
     - Mentoring
 greeting: My name is Dmitrii and I live in Berlin, Germany.
-summary: Senior Frontend Developer with 10+ years of experience building scalable web applications from concept to production. Specialized in React, TypeScript, and Node.js, with a strong focus on frontend architecture and performance optimization. Have experience leading frontend teams and taking products from early-stage development to highload production environments serving thousands of concurrent users.
+summary: Senior Software Engineer with 10+ years of experience building scalable web applications from concept to production. Specialized in React, TypeScript, and Node.js, with a strong focus on frontend architecture and performance optimization. Have experience leading frontend teams and taking products from early-stage development to highload production environments serving thousands of concurrent users.
 experience:
   - title: Getsitecontrol
     position: Senior Frontend Engineer (Contract)
@@ -49,12 +52,12 @@ experience:
       - Refactored styles and typography to support pixel-perfect testing across the platform.
       - Developed an email campaign builder with support for template creation and integrations with third-party email marketing services.
   - title: Simplenight
-    position: Senior Software Engineer (Contract)
+    position: Senior Fullstack Engineer (Contract)
     date_from: 2024-12
     date_to: 2025-06
     description: Simplenight is a white-label booking platform for hotels, events, flights, and entertainment.
     achievements:
-      - Reduced Total Blocking Time (TBT) by 93% — from 8.7s to 0.6s — through performance optimization and SSR improvements.
+      - Reduced Total Blocking Time (TBT) by 93% — from 8.7s to 0.6s by optimizing the Next.js SSR pipeline and improving rendering performance.
       - Made significant contributions to the internal component library and introduced Storybook, streamlining collaboration with the design team.
   - title: Novakid
     position: Senior Software Engineer (Tech Lead)
