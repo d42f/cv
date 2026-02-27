@@ -57,7 +57,7 @@ experience:
     date_to: 2025-06
     description: Simplenight is a white-label booking platform for hotels, events, flights, and entertainment.
     achievements:
-      - Reduced Total Blocking Time (TBT) by 93% — from 8.7s to 0.6s by optimizing the Next.js SSR pipeline and improving rendering performance.
+      - Reduced Total Blocking Time (TBT) by 93% — from 8.7s to 1.2s by optimizing the Next.js SSR pipeline and improving rendering performance.
       - Made significant contributions to the internal component library and introduced Storybook, streamlining collaboration with the design team.
   - title: Novakid
     position: Senior Software Engineer (Tech Lead)
