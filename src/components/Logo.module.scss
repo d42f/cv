@@ -1,4 +1,4 @@
-@import '@/styles/variables';
+@use '@/styles/mixins' as *;
 
 .label {
   font-size: 1.125rem;
@@ -9,4 +9,10 @@
 .link {
   display: block;
   padding: 0.25rem 0.125rem;
+  text-transform: uppercase;
+  white-space: normal;
+
+  @include media-breakpoint-up(md) {
+    white-space: nowrap;
+  }
 }

@@ -1,9 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Resend } from 'resend';
 
-import { isObject } from '@/utils/type';
-import { isResendError } from '@/utils/resend';
 import { IErrorResponse, IResponseStatus, ISuccessResponse } from '@/models/IResponse';
+import { isObject } from '@/utils/type';
 
 type Data = ISuccessResponse | IErrorResponse;
 
@@ -18,15 +17,15 @@ const sendMessage = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   const resend = new Resend(process.env.RESEND_API_KEY);
 
   try {
-    const result = await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: process.env.RESEND_FROM,
       to: process.env.RESEND_TO,
       subject: `New message from ${name} (${email})`,
       text: `${name} (${email}): ${message}`,
     });
 
-    if (isResendError(result)) {
-      throw new Error(result.message);
+    if (error) {
+      throw new Error(error.message);
     }
 
     res.status(200).json({ status: IResponseStatus.Success });

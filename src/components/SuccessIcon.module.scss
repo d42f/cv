@@ -1,4 +1,4 @@
-@import '@/styles/variables';
+@use '@/styles/variables' as *;
 
 $success-icon-color: $body-color;
 $success-icon-check-length: 36;
@@ -67,7 +67,8 @@ $success-icon-circle-length: 2 * 3.14 * $success-icon-circle-radius;
     stroke-width: 2px;
     stroke-linecap: round;
     stroke-dasharray: $success-icon-circle-length $success-icon-circle-length;
-    animation: successIconDrawCircle 1s cubic-bezier(0.77, 0, 0.175, 1) 0s both,
+    animation:
+      successIconDrawCircle 1s cubic-bezier(0.77, 0, 0.175, 1) 0s both,
       successIconFadeOut 0.3s linear 0.9s both;
   }
 
@@ -76,6 +77,8 @@ $success-icon-circle-length: 2 * 3.14 * $success-icon-circle-radius;
     stroke: $success-icon-color;
     stroke-width: 2px;
     stroke-dasharray: $success-icon-check-length $success-icon-check-length;
-    animation: successIconDrawCheck 1s cubic-bezier(0.77, 0, 0.175, 1) 0s both, successIconFadeOut 0.3s linear 0.9s both;
+    animation:
+      successIconDrawCheck 1s cubic-bezier(0.77, 0, 0.175, 1) 0s both,
+      successIconFadeOut 0.3s linear 0.9s both;
   }
 }

@@ -8,7 +8,7 @@ interface SuccessIconProps {
   height?: string | number;
 }
 
-export const SuccessIcon = ({ className, width, height }: SuccessIconProps): JSX.Element => (
+export const SuccessIcon = ({ className, width, height }: SuccessIconProps) => (
   <svg
     className={classNames(className, styles.icon)}
     xmlns="http://www.w3.org/2000/svg"

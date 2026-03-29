@@ -1,9 +1,9 @@
-@import 'variables';
-@import 'functions';
+@forward 'variables';
+@forward 'functions';
 
-@import 'mixins/breakpoint';
-@import 'mixins/gradient';
-@import 'mixins/container';
-@import 'mixins/form-control';
-@import 'mixins/form-field';
-@import 'mixins/button';
+@forward 'mixins/breakpoint';
+@forward 'mixins/gradient';
+@forward 'mixins/container';
+@forward 'mixins/form-control';
+@forward 'mixins/form-field';
+@forward 'mixins/button';

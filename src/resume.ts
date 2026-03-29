@@ -1,4 +1,5 @@
 import { IResume } from '@/models/IResume';
+
 import yamlResume from './resume.yaml';
 
 export const {

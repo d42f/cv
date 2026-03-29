@@ -1,11 +1,11 @@
-import React, { useRef } from 'react';
-import classNames from 'classnames';
 import { FaBookmark } from 'react-icons/fa';
 import { useVisible } from 'react-use-observer-hooks';
+import classNames from 'classnames';
 
+import { SectionTitle } from '@/components/SectionTitle';
 import { experience } from '@/resume';
 import { formatDateRange } from '@/utils/date';
-import { SectionTitle } from '@/components/SectionTitle';
+
 import styles from './Timeline.module.scss';
 
 interface IBlock {
@@ -28,9 +28,8 @@ interface TimelineProps {
   className?: string;
 }
 
-const Block = ({ title, subtitle, date, description }: IBlock): JSX.Element => {
-  const ref = useRef<HTMLDivElement>(null);
-  const visible = useVisible(ref.current, { freezeOnceVisible: true });
+const Block = ({ title, subtitle, date, description }: IBlock) => {
+  const [ref, visible] = useVisible({ freezeOnceVisible: true });
 
   return (
     <section className={classNames(styles.block, { [styles.blockVisible]: visible })} ref={ref}>
@@ -45,7 +44,7 @@ const Block = ({ title, subtitle, date, description }: IBlock): JSX.Element => {
   );
 };
 
-export const Timeline = ({ className }: TimelineProps): JSX.Element => (
+export const Timeline = ({ className }: TimelineProps) => (
   <article className={classNames(styles.wrapper, className)}>
     <SectionTitle label="Timeline" />
     <div className={classNames(styles.edgePoint, styles.startPoint)}>PRESENT</div>

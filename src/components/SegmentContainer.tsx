@@ -1,4 +1,4 @@
-import React, { ComponentPropsWithoutRef, ReactNode, forwardRef } from 'react';
+import React, { ComponentPropsWithoutRef, forwardRef, ReactNode } from 'react';
 import classNames from 'classnames';
 
 import styles from './SegmentContainer.module.scss';

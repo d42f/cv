@@ -1,8 +1,8 @@
-import React from 'react';
-import classNames from 'classnames';
 import { useForm } from 'react-hook-form';
+import classNames from 'classnames';
 
 import { EMAIL_PATTERN } from '@/utils/email';
+
 import styles from './MessageMeForm.module.scss';
 
 export interface MessageMeData {
@@ -17,7 +17,7 @@ interface MessageMeFormProps {
   onSubmit: (data: MessageMeData) => void;
 }
 
-export const MessageMeForm = ({ className, disabled, onSubmit }: MessageMeFormProps): JSX.Element => {
+export const MessageMeForm = ({ className, disabled, onSubmit }: MessageMeFormProps) => {
   const {
     formState: { errors },
     register,

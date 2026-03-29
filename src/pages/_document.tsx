@@ -1,15 +1,14 @@
-import getConfig from 'next/config';
 import BaseDocument, { Head, Html, Main, NextScript } from 'next/document';
 
-const { publicRuntimeConfig } = getConfig();
+import { email, name } from '@/resume';
 
 export default class Document extends BaseDocument {
   render() {
     return (
       <Html lang="en" dir="ltr">
         <Head>
-          <meta name="description" content={publicRuntimeConfig.appName} />
-          <meta name="author" content={publicRuntimeConfig.author} />
+          <meta name="description" content={`${name} CV`} />
+          <meta name="author" content={email} />
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />

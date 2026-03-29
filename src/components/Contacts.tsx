@@ -3,15 +3,16 @@ import { FaEnvelope, FaPhone, FaTelegramPlane } from 'react-icons/fa';
 import classNames from 'classnames';
 import useSWRMutation from 'swr/mutation';
 
-import { email, phone, telegram } from '@/resume';
-import { isServerError } from '@/utils/response';
-import { poster } from '@/utils/request';
-import { linkEmail, linkPhone, linkTelegram } from '@/utils/link';
-import { formatPhone } from '@/utils/phone';
-import { sleep } from '@/utils/timeout';
 import { MessageMeData, MessageMeForm } from '@/components/MessageMeForm';
 import { SectionTitle } from '@/components/SectionTitle';
 import SuccessIcon from '@/components/SuccessIcon';
+import { email, phone, telegram } from '@/resume';
+import { linkEmail, linkPhone, linkTelegram } from '@/utils/link';
+import { formatPhone } from '@/utils/phone';
+import { poster } from '@/utils/request';
+import { isServerError } from '@/utils/response';
+import { sleep } from '@/utils/timeout';
+
 import styles from './Contacts.module.scss';
 
 const CONTACTS = [
@@ -24,7 +25,7 @@ interface ContactsProps {
   className?: string;
 }
 
-export const Contacts = ({ className }: ContactsProps): JSX.Element => {
+export const Contacts = ({ className }: ContactsProps) => {
   const [isFetching, setIsFetching] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [formKey, setFormKey] = useState(0);
@@ -39,7 +40,7 @@ export const Contacts = ({ className }: ContactsProps): JSX.Element => {
       }
       setIsSuccess(true);
       await sleep(2000);
-    } catch (error) {
+    } catch {
       // TODO: add indication
     } finally {
       setIsFetching(false);

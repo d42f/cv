@@ -1,7 +1,8 @@
-import classNames from 'classnames';
 import { FaFacebookF, FaGithub, FaInstagram, FaTwitter } from 'react-icons/fa';
+import classNames from 'classnames';
 
 import { links } from '@/resume';
+
 import styles from './PageFooter.module.scss';
 
 const footerLinks = [
@@ -15,7 +16,7 @@ interface PageFooterProps {
   className?: string;
 }
 
-export const PageFooter = ({ className }: PageFooterProps): JSX.Element => (
+export const PageFooter = ({ className }: PageFooterProps) => (
   <footer className={classNames(styles.wrapper, className)}>
     <nav className={styles.nav}>
       {footerLinks.map(({ label, href, Icon }, ind) => (

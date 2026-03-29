@@ -1,4 +1,5 @@
-@import '@/styles/mixins';
+@use 'sass:math';
+@use '@/styles/mixins' as *;
 
 .wrapper {
   flex: 1;
@@ -13,11 +14,11 @@
 
   @include media-breakpoint-up(md) {
     display: block;
-    width: 100%/12 * 4;
+    width: math.percentage(math.div(4, 12));
   }
 
   @include media-breakpoint-up(lg) {
-    width: 100%/12 * 3;
+    width: math.percentage(math.div(3, 12));
   }
 }
 

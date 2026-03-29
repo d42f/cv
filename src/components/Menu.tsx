@@ -15,7 +15,7 @@ export const Menu = <T extends { href: string; label: string }>({
   items,
   active,
   onSelect,
-}: MenuProps<T>): JSX.Element => {
+}: MenuProps<T>) => {
   return (
     <nav className={classNames(styles.wrapper, className)}>
       <ul className={styles.list}>

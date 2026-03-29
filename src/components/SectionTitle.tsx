@@ -7,7 +7,7 @@ interface SectionTitleProps {
   label: string;
 }
 
-export const SectionTitle = ({ className, label }: SectionTitleProps): JSX.Element => (
+export const SectionTitle = ({ className, label }: SectionTitleProps) => (
   <div className={classNames(styles.wrapper, className)}>
     <h3 className={styles.title}>{label}</h3>
     <span className={styles.letter}>{label.charAt(0)}</span>

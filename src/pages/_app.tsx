@@ -1,16 +1,15 @@
 import type { AppProps } from 'next/app';
-import getConfig from 'next/config';
 import Head from 'next/head';
 
-const { publicRuntimeConfig } = getConfig();
+import { name } from '@/resume';
 
 import '@/styles/globals.scss';
 
-export default function App({ Component, pageProps }: AppProps): JSX.Element {
+export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>{publicRuntimeConfig.appName}</title>
+        <title>{name} CV</title>
       </Head>
       <Component {...pageProps} />
     </>

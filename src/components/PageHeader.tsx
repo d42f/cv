@@ -1,9 +1,10 @@
-import classNames from 'classnames';
 import { useWasScrolled } from 'react-use-observer-hooks';
+import classNames from 'classnames';
 
-import { IPage } from '@/models/IPage';
 import { Logo } from '@/components/Logo';
 import { Menu } from '@/components/Menu';
+import { IPage } from '@/models/IPage';
+
 import styles from './PageHeader.module.scss';
 
 interface PageHeaderProps {
@@ -14,7 +15,7 @@ interface PageHeaderProps {
   onSelect?: (page: IPage) => void;
 }
 
-export const PageHeader = ({ className, logoHref, pages, currentPage, onSelect }: PageHeaderProps): JSX.Element => {
+export const PageHeader = ({ className, logoHref, pages, currentPage, onSelect }: PageHeaderProps) => {
   const isScrolled = useWasScrolled();
 
   return (

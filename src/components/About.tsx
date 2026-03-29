@@ -1,9 +1,10 @@
 import { Fragment } from 'react';
-import classNames from 'classnames';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
+import classNames from 'classnames';
 
 import { greeting, name, position, skills, summary } from '@/resume';
+
 import styles from './About.module.scss';
 
 const SKILLS = [
@@ -18,7 +19,7 @@ interface AboutProps {
   className?: string;
 }
 
-export const About = ({ className }: AboutProps): JSX.Element => (
+export const About = ({ className }: AboutProps) => (
   <article className={classNames(styles.wrapper, className)}>
     <aside className={styles.photo}>
       <Image className={styles.image} src="/avatar.jpg" width={550} height={820} priority={true} alt="" />

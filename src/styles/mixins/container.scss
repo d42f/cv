@@ -1,4 +1,5 @@
-@import './breakpoint';
+@use '../variables' as *;
+@use './breakpoint' as *;
 
 @mixin container() {
   max-width: $page-max-width;

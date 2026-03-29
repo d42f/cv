@@ -1,13 +1,14 @@
-import React, { CSSProperties, ReactNode, useEffect, useRef, useState } from 'react';
-import classNames from 'classnames';
-import Link from 'next/link';
-import Image from 'next/image';
+import { CSSProperties, ReactNode, useEffect, useRef, useState } from 'react';
 import { FaHome, FaPrint } from 'react-icons/fa';
+import Image from 'next/image';
+import Link from 'next/link';
+import classNames from 'classnames';
 
 import { education, email, experience, links, name, phone, skills, summary, telegram } from '@/resume';
 import { formatDateRange } from '@/utils/date';
-import { formatPhone } from '@/utils/phone';
 import { linkEmail, linkPhone, linkTelegram } from '@/utils/link';
+import { formatPhone } from '@/utils/phone';
+
 import styles from './ResumeDocument.module.scss';
 
 interface IPoint {
@@ -55,13 +56,7 @@ const EDUCATION_POINTS: IPoint[] = education.map(({ title, date_from, date_to, d
   description,
 }));
 
-const Links = ({
-  className,
-  items,
-}: {
-  className?: string;
-  items: Array<{ label: string; href: string }>;
-}): JSX.Element => (
+const Links = ({ className, items }: { className?: string; items: Array<{ label: string; href: string }> }) => (
   <ul className={classNames(styles.contacts, className)}>
     {items.map(({ label, href }, index) => (
       <li className={styles.contactsItem} key={index}>
@@ -73,7 +68,7 @@ const Links = ({
   </ul>
 );
 
-const Point = ({ title, subtitle, children }: IPoint & { children: ReactNode }): JSX.Element => (
+const Point = ({ title, subtitle, children }: IPoint & { children: ReactNode }) => (
   <div className={styles.point}>
     <div className={styles.pointHeader}>
       <div className={styles.pointTitle}>{title}</div>
@@ -83,15 +78,7 @@ const Point = ({ title, subtitle, children }: IPoint & { children: ReactNode }):
   </div>
 );
 
-const Section = ({
-  label,
-  points,
-  children,
-}: {
-  label: string;
-  points?: IPoint[];
-  children?: ReactNode;
-}): JSX.Element => (
+const Section = ({ label, points, children }: { label: string; points?: IPoint[]; children?: ReactNode }) => (
   <section className={styles.section}>
     <span className={styles.sectionLabel}>{label}</span>
     <div className={styles.sectionContent}>
@@ -119,7 +106,7 @@ interface ResumeDocumentProps {
   className?: string;
 }
 
-export const ResumeDocument = ({ className }: ResumeDocumentProps): JSX.Element => {
+export const ResumeDocument = ({ className }: ResumeDocumentProps) => {
   const [toolbarStyles, setToolbarStyles] = useState<Partial<CSSProperties>>();
   const pageRef = useRef<HTMLDivElement>(null);
 
