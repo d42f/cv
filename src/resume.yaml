@@ -97,7 +97,7 @@ experience:
   - title: Onlyoffice (TeamLab)
     position: Frontend Engineer
     date_from: 2009-09
-    date_to: 2012-06
+    date_to: 2013-05
     description: Collaborative office suite with document editing, messaging, and video communication tools.
     achievements:
       - Developed a web client based on the XMPP protocol for the company's messaging product TM Talk.
