@@ -161,6 +161,7 @@ $timeline-bg: $gray-600;
     h4 {
       grid-area: title;
       font-size: $font-size-md;
+      white-space: nowrap;
     }
 
     h5 {
@@ -175,6 +176,7 @@ $timeline-bg: $gray-600;
       margin: 0 0 0 auto;
       font-size: $font-size-sm;
       color: $gray-600;
+      white-space: nowrap;
     }
 
     p {

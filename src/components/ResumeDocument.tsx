@@ -4,7 +4,19 @@ import Image from 'next/image';
 import Link from 'next/link';
 import classNames from 'classnames';
 
-import { education, email, experience, links, name, phone, skills, summary, telegram } from '@/resume';
+import {
+  education,
+  email,
+  experience,
+  languages,
+  links,
+  name,
+  phone,
+  position,
+  skills,
+  summary,
+  telegram,
+} from '@/resume';
 import { formatDateRange } from '@/utils/date';
 import { linkEmail, linkPhone, linkTelegram } from '@/utils/link';
 import { formatPhone } from '@/utils/phone';
@@ -18,7 +30,7 @@ interface IPoint {
   achievements?: string[];
 }
 
-const DATE_MASK = 'yyyy-mm';
+const DATE_MASK = 'mm/yyyy';
 
 const CONTACTS = [
   { label: email, href: linkEmail(email) },
@@ -61,7 +73,7 @@ const Links = ({ className, items }: { className?: string; items: Array<{ label:
     {items.map(({ label, href }, index) => (
       <li className={styles.contactsItem} key={index}>
         <a href={href} target="_blank">
-          {label}
+          {href.startsWith('mailto:') || href.startsWith('tg:') ? label.replace(/^(mailto|tel):/, '') : href}
         </a>
       </li>
     ))}
@@ -84,16 +96,13 @@ const Section = ({ label, points, children }: { label: string; points?: IPoint[]
     <div className={styles.sectionContent}>
       {points?.map(({ title, subtitle, description, achievements }, index: number) => (
         <Point title={title} subtitle={subtitle} key={index}>
-          {description && <p>{description}</p>}
+          {description && <p dangerouslySetInnerHTML={{ __html: description }} />}
           {achievements && (
-            <>
-              <b>Achievements:</b>
-              <ul>
-                {achievements.map((achievement: string, index: number) => (
-                  <li key={index}>{achievement}</li>
-                ))}
-              </ul>
-            </>
+            <ul>
+              {achievements.map((achievement: string, index: number) => (
+                <li key={index}>{achievement}</li>
+              ))}
+            </ul>
           )}
         </Point>
       ))}
@@ -137,16 +146,15 @@ export const ResumeDocument = ({ className }: ResumeDocumentProps) => {
         <section className={styles.header}>
           <div className={styles.description}>
             <h1 className={styles.name}>{name}</h1>
+            <h2 className={styles.position}>{position}</h2>
             <Links items={CONTACTS} />
-            <Links className={styles.noPrint} items={LINKS} />
+            <Links items={LINKS} />
           </div>
           <Image className={styles.photo} src="/avatar_small.jpg" width={64} height={64} alt="" />
         </section>
-        <hr className={styles.separator} />
         <Section label="Summary">
-          <p>{summary}</p>
+          <p dangerouslySetInnerHTML={{ __html: summary }} />
         </Section>
-        <hr className={styles.separator} />
         <Section label="Skills">
           <div className={styles.point}>
             {SKILLS.map((skill, index) => (
@@ -156,18 +164,11 @@ export const ResumeDocument = ({ className }: ResumeDocumentProps) => {
             ))}
           </div>
         </Section>
-        {!!EXPERIENCE_POINTS.length && (
-          <>
-            <hr className={styles.separator} />
-            <Section label="Experience" points={EXPERIENCE_POINTS} />
-          </>
-        )}
-        {!!EDUCATION_POINTS.length && (
-          <>
-            <hr className={styles.separator} />
-            <Section label="Education" points={EDUCATION_POINTS} />
-          </>
-        )}
+        {!!EXPERIENCE_POINTS.length && <Section label="Experience" points={EXPERIENCE_POINTS} />}
+        {!!EDUCATION_POINTS.length && <Section label="Education" points={EDUCATION_POINTS} />}
+        <Section label="Languages">
+          <p>{languages}</p>
+        </Section>
       </div>
       <footer className={classNames(styles.toolbar, toolbarStyles && styles.toolbarVisible)} style={toolbarStyles}>
         <Link className={styles.backBtn} href="/">

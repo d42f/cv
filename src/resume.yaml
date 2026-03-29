@@ -1,5 +1,5 @@
 name: Dmitrii Frolov
-position: Front-end Developer
+position: Senior Frontend Engineer
 email: dmitri.frolof@gmail.com
 telegram: dmitrifrolof
 address: Berlin, Germany
@@ -8,30 +8,33 @@ links:
   linkedin: https://www.linkedin.com/in/dmitrifrolof/
   instagram: https://www.instagram.com/2b_unicorn/
   facebook: https://www.facebook.com/dmitri.frolof
-  codewars: https://www.codewars.com/users/d42f
+  #codewars: https://www.codewars.com/users/d42f
 skills:
   frontend:
     - TypeScript
     - React
     - Next.js
     - Redux & RTK
+    - TanStack Query
+    - Zod
     - SCSS
-    - SPA
-    - PWA
+    - Tailwind CSS
   backend:
     - Node.js
     - REST API
     - GraphQL
+    - Prisma
     - WebRTC
   tooling:
     - Webpack
     - Vite
-    - AI coding tools
+    - Storybook
+    - AI coding tools (Claude, Cursor)
   testing:
     - Jest
     - Cypress
     - Playwright
-    - Storybook
+    - GrowthBook
   methodologies:
     - Agile
     - Scrum
@@ -39,35 +42,45 @@ skills:
     - Code Review
     - Mentoring
 greeting: My name is Dmitrii and I live in Berlin, Germany.
-summary: Senior Software Engineer with 10+ years of experience building scalable web applications from concept to production. Specialized in React, TypeScript, and Node.js, with a strong focus on frontend architecture and performance optimization. Have experience leading frontend teams and taking products from early-stage development to highload production environments serving thousands of concurrent users.
+summary: Senior Frontend Engineer with 10+ years of experience building scalable web products with <b>React</b>, <b>Next.js</b>, and <b>TypeScript</b>. Reduced TBT by 80% through Next.js SSR optimization. Experienced with <b>Node.js</b> on the backend, end-to-end testing with <b>Playwright</b> and <b>Jest</b>, state management with <b>Redux</b> and <b>TanStack Query</b>, and component library development with <b>Storybook</b>. Comfortable owning frontend architecture end-to-end, from technical design to production monitoring.
 experience:
   - title: Getsitecontrol
-    position: Senior Frontend Engineer (Contract)
-    date_from: 2019-09
-    date_to: null
+    position: Senior Frontend Engineer
+    date_from: 2025-06
+    date_to: 2026-03
     description: Getsitecontrol is a SaaS platform for creating and integrating forms, promo widgets, and email marketing campaigns into websites.
     achievements:
-      - Migrated legacy AngularJS codebase to React and RTK, refactoring the architecture and reducing Total Blocking Time (TBT) by 60%.
-      - Improved product configurability, enabling the launch of a new standalone product "Getform" based on the existing codebase.
-      - Refactored styles and typography to support pixel-perfect testing across the platform.
       - Developed an email campaign builder with support for template creation and integrations with third-party email marketing services.
+      - Built automation tools for email marketing campaign management.
+      - Integrated A/B testing into the platform using GrowthBook, including feature flags and experiment tracking.
+      - Led frontend architecture decisions for the platform, establishing coding standards and development workflows adopted by the team.
   - title: Simplenight
-    position: Senior Fullstack Engineer (Contract)
+    position: Senior Fullstack Engineer
     date_from: 2024-12
     date_to: 2025-06
-    description: Simplenight is a white-label booking platform for hotels, events, flights, and entertainment.
+    description: Simplenight is a white-label booking platform for hotels, events, flights, and entertainment, built on Next.js.
     achievements:
-      - Reduced Total Blocking Time (TBT) by 93% - from 8.7s to 0.6s by optimizing the Next.js SSR pipeline and improving rendering performance.
-      - Made significant contributions to the internal component library and introduced Storybook, streamlining collaboration with the design team.
+      - Reduced Total Blocking Time (TBT) by 80% (from 4.2s to 0.84s) through Next.js SSR pipeline optimization and performance optimization techniques.
+      - Built and maintained a component library and design system, introduced Storybook, streamlining collaboration with the design team.
+      - Delivered features end-to-end as a fullstack engineer, handling both frontend and backend implementation independently.
+  - title: Getsitecontrol
+    position: Senior Frontend Engineer
+    date_from: 2019-09
+    date_to: 2024-12
+    description: SaaS platform for web forms, promo widgets, and email marketing.
+    achievements:
+      - Migrated legacy AngularJS codebase to React and RTK using Single-SPA micro-frontend architecture, refactoring the codebase and reducing Total Blocking Time (TBT) by 60%.
+      - Improved product configurability, enabling the launch of a new standalone product "Getform" based on the existing codebase.
+      - Redesigned the token system and style architecture, enabling pixel-perfect component development across the platform.
   - title: Novakid
-    position: Senior Software Engineer (Tech Lead)
+    position: Senior Frontend Engineer / Tech Lead
     date_from: 2017-08
     date_to: 2019-09
     description: Novakid is an online language school for children, featuring real-time video lessons with an interactive whiteboard, slides, and mini-games.
     achievements:
       - Researched and integrated the open-source media server Kurento, enabling WebRTC-based video calls in the browser and accelerating the launch of the first product version.
-      - Designed and built a Node.js application for real-time video communication between teachers and students, handling 1000+ concurrent active calls per day.
-      - Grew from sole frontend developer to Tech Lead, managing a team of 4 frontend developers and overseeing all platform releases.
+      - Designed and built a real-time video communication platform using WebRTC and Node.js from scratch, scaling to 1000+ concurrent active sessions per day.
+      - Grew from sole frontend developer to Tech Lead, managing a team of 4 and overseeing all platform releases.
   - title: ASDTech
     position: Senior Frontend Engineer
     date_from: 2013-05
@@ -75,22 +88,21 @@ experience:
     description: Cloud storage solutions provider for major mobile operators including Vodafone, Vestel, and MegaFon.
     achievements:
       - Designed a deeply customizable frontend architecture for the company's core product Cloudike, used by millions of users across multiple operators.
-      - Developed the core codebase and infrastructure for web and mobile clients.
-      - Implemented an SSO client for seamless authentication across web, mobile, and desktop platforms.
+      - Built web and mobile clients from the ground up, including an SSO client for seamless authentication across all platforms.
       - Mentored junior frontend developers, conducting code reviews and sharing best practices.
   - title: Onlyoffice (TeamLab)
     position: Frontend Engineer
     date_from: 2009-09
     date_to: 2012-06
-    description: It was my first experience in large company with excellent teammates who helped me boost my skills.
+    description: Collaborative office suite with document editing, messaging, and video communication tools.
     achievements:
       - Developed a web client based on the XMPP protocol for the company's messaging product TM Talk.
       - Took part in development of a video communication module based on the Red5 media server.
       - Implemented an API SDK for the major product based on technical documentation.
 education:
-  - title: Vladimir State University / Department of Radio Electronics and Computer Systems
-    date_from: '2004-09'
-    date_to: '2009-05'
+  - title: Vladimir State University / Department of Computer Systems
+    #date_from: 2004-09
+    #date_to: 2009-05
     description: 'Major: Master of Computer Science and Engineering, BCA 0610377'
 speeches:
   - title: How to buy a bike (Как купить велосипед)
@@ -101,4 +113,4 @@ speeches:
     date: 2015-02-28
     presentation: https://docs.google.com/presentation/d/16zK4XFgAUbOXswwzUiG1Ij8lWS0BLttFNuCoiAlOXzk/edit
     description: My second public speech. Unfortunately there is no video.
-languages: English (B2), Russian (fluent)
+languages: English (Professional working proficiency), Russian (Native or bilingual proficiency)

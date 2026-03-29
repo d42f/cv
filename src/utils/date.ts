@@ -9,8 +9,8 @@ export const formatDate = (date: Date | string, mask: string): string => {
       return `${date.getFullYear()}`;
     case 'mm yyyy':
       return `${monthsShort[date.getMonth()]} ${date.getFullYear()}`;
-    case 'yyyy-mm':
-      return `${date.getFullYear()}-${zero(date.getMonth() + 1)}`;
+    case 'mm/yyyy':
+      return `${zero(date.getMonth() + 1)}/${date.getFullYear()}`;
   }
   return date.toString();
 };

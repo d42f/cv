@@ -2,7 +2,8 @@ export interface IResumePoint {
   title: string;
   date_from: string;
   date_to: string | null;
-  description: string;
+  description?: string;
+  hint?: string;
 }
 
 export interface IResume {
@@ -27,7 +28,7 @@ export interface IResume {
     title: string;
     date: string;
     link: string;
-    description: string;
+    description?: string;
   }>;
   experience: Array<
     IResumePoint & {

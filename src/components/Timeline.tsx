@@ -17,11 +17,11 @@ interface IBlock {
 
 const DATE_MASK = 'mm yyyy';
 
-const BLOCKS: IBlock[] = experience.map(({ title, position, date_from, date_to, description }) => ({
+const BLOCKS: IBlock[] = experience.map(({ title, position, date_from, date_to, description, hint }) => ({
   title: title || position,
   subtitle: title ? position : null,
   date: formatDateRange(date_from, date_to, DATE_MASK),
-  description,
+  description: description || hint || '',
 }));
 
 interface TimelineProps {
