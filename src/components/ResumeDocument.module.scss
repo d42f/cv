@@ -153,6 +153,12 @@
   }
 }
 
+.printHelper {
+  @media print {
+    margin: 0.75rem 0 0;
+  }
+}
+
 .section {
   display: flex;
   flex-flow: column;

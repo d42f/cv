@@ -153,7 +153,9 @@ export const ResumeDocument = ({ className }: ResumeDocumentProps) => {
           </div>
         </Section>
         {!!EXPERIENCE_POINTS.length && <Section label="Experience" points={EXPERIENCE_POINTS} />}
-        {!!EDUCATION_POINTS.length && <Section label="Education" points={EDUCATION_POINTS} />}
+        <div className={styles.printHelper}>
+          {!!EDUCATION_POINTS.length && <Section label="Education" points={EDUCATION_POINTS} />}
+        </div>
         <Section label="Languages">
           <p>{languages}</p>
         </Section>
