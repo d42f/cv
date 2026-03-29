@@ -126,8 +126,15 @@
 
 .name {
   font-family: inherit;
-  font-size: $h2-font-size;
-  font-weight: $font-weight-normal;
+  font-size: $h3-font-size;
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+}
+
+.position {
+  font-family: inherit;
+  font-size: $h5-font-size;
+  font-weight: $font-weight-bold;
 }
 
 .contacts {

@@ -4,21 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import classNames from 'classnames';
 
-import {
-  education,
-  email,
-  experience,
-  languages,
-  links,
-  name,
-  phone,
-  position,
-  skills,
-  summary,
-  telegram,
-} from '@/resume';
+import { education, email, experience, languages, links, name, phone, position, skills, summary } from '@/resume';
 import { formatDateRange } from '@/utils/date';
-import { linkEmail, linkPhone, linkTelegram } from '@/utils/link';
+import { linkEmail, linkPhone } from '@/utils/link';
 import { formatPhone } from '@/utils/phone';
 
 import styles from './ResumeDocument.module.scss';
@@ -35,7 +23,7 @@ const DATE_MASK = 'mm/yyyy';
 const CONTACTS = [
   { label: email, href: linkEmail(email) },
   ...(phone ? [{ label: `${formatPhone(phone)}`, href: linkPhone(phone) }] : []),
-  ...(telegram ? [{ label: `telegram: @${telegram}`, href: linkTelegram(telegram) }] : []),
+  //...(telegram ? [{ label: `telegram: @${telegram}`, href: linkTelegram(telegram) }] : []),
 ];
 
 const LINKS = [

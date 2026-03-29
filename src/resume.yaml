@@ -29,11 +29,15 @@ skills:
     - Webpack
     - Vite
     - Storybook
+    - CI/CD
+    - Docker
+    - Git
     - AI coding tools (Claude, Cursor)
   testing:
     - Jest
     - Cypress
     - Playwright
+    - React Testing Library
     - GrowthBook
   methodologies:
     - Agile
@@ -42,7 +46,7 @@ skills:
     - Code Review
     - Mentoring
 greeting: My name is Dmitrii and I live in Berlin, Germany.
-summary: Senior Frontend Engineer with 10+ years of experience building scalable web products with <b>React</b>, <b>Next.js</b>, and <b>TypeScript</b>. Reduced TBT by 80% through Next.js SSR optimization. Experienced with <b>Node.js</b> on the backend, end-to-end testing with <b>Playwright</b> and <b>Jest</b>, state management with <b>Redux</b> and <b>TanStack Query</b>, and component library development with <b>Storybook</b>. Comfortable owning frontend architecture end-to-end, from technical design to production monitoring.
+summary: Senior Frontend Engineer with 10+ years of experience building scalable web products with <b>React</b>, <b>Next.js</b>, and <b>TypeScript</b>. Reduced Total Blocking Time (TBT) by 80% through Next.js SSR optimization. Experienced with <b>Node.js</b> on the backend, end-to-end testing with <b>Playwright</b> and <b>Jest</b>, state management with <b>Redux</b> and <b>TanStack Query</b>, and component library development with <b>Storybook</b>. Comfortable owning frontend architecture end-to-end, from technical design to production monitoring.
 experience:
   - title: Getsitecontrol
     position: Senior Frontend Engineer
@@ -60,7 +64,7 @@ experience:
     date_to: 2025-06
     description: Simplenight is a white-label booking platform for hotels, events, flights, and entertainment, built on Next.js.
     achievements:
-      - Reduced Total Blocking Time (TBT) by 80% (from 4.2s to 0.84s) through Next.js SSR pipeline optimization and performance optimization techniques.
+      - Reduced Total Blocking Time (TBT) by 80% (from 4.2s to 0.84s) through Next.js SSR pipeline and performance optimization.
       - Built and maintained a component library and design system, introduced Storybook, streamlining collaboration with the design team.
       - Delivered features end-to-end as a fullstack engineer, handling both frontend and backend implementation independently.
   - title: Getsitecontrol
@@ -113,4 +117,4 @@ speeches:
     date: 2015-02-28
     presentation: https://docs.google.com/presentation/d/16zK4XFgAUbOXswwzUiG1Ij8lWS0BLttFNuCoiAlOXzk/edit
     description: My second public speech. Unfortunately there is no video.
-languages: English (Professional working proficiency), Russian (Native or bilingual proficiency)
+languages: English (professional working proficiency), Russian (native)
