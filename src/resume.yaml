@@ -6,7 +6,7 @@ address: Berlin, Germany
 links:
   github: https://github.com/d42f
   linkedin: https://www.linkedin.com/in/dmitrifrolof/
-  instagram: https://www.instagram.com/2b_unicorn/
+  #instagram: https://www.instagram.com/2b_unicorn/
   facebook: https://www.facebook.com/dmitri.frolof
   #codewars: https://www.codewars.com/users/d42f
 skills:
@@ -16,27 +16,32 @@ skills:
     - Next.js
     - Redux & RTK
     - TanStack Query
+    - Zustand
     - Zod
-    - SCSS
     - Tailwind CSS
+    - Google Charts
+    - Core Web Vitals
+    - Accessibility (WCAG)
   backend:
     - Node.js
+    - NestJS
     - REST API
     - GraphQL
-    - Prisma
+    - WebSockets
     - WebRTC
   tooling:
-    - Webpack
-    - Vite
+    - Webpack/Vite
     - Storybook
     - CI/CD
     - Docker
+    - AWS
     - Git
     - AI coding tools (Claude, Cursor)
   testing:
-    - Jest
-    - Cypress
+    - Vitest
     - Playwright
+    - Cypress
+    - Jest
     - React Testing Library
     - GrowthBook
   methodologies:
@@ -45,64 +50,76 @@ skills:
     - Kanban
     - Code Review
     - Mentoring
-greeting: My name is Dmitrii and I live in Berlin, Germany.
-summary: Senior Frontend Engineer with 10+ years of experience building scalable web products with <b>React</b>, <b>Next.js</b>, and <b>TypeScript</b>. Reduced Total Blocking Time (TBT) by 80% through Next.js SSR optimization. Experienced with <b>Node.js</b> on the backend, end-to-end testing with <b>Playwright</b> and <b>Jest</b>, state management with <b>Redux</b> and <b>TanStack Query</b>, and component library development with <b>Storybook</b>. Comfortable owning frontend architecture end-to-end, from technical design to production monitoring.
+greeting: My name is Dmitrii and I'm a
+summary: Senior Frontend Engineer with 10+ years of experience shipping high-impact web products with React, Next.js, and TypeScript. Slashed Total Blocking Time by 80% through Next.js SSR optimization and integrated Lighthouse checks into CI/CD for continuous Core Web Vitals monitoring. Built real-time WebRTC and WebSocket platforms scaling to 1000+ concurrent sessions. Deep expertise in state management (Redux, TanStack Query, Zustand), component library design with Storybook, and end-to-end testing with Playwright and Jest. Experienced with microfrontend architecture, design systems, A/B testing, and performance optimization across production platforms. Passionate about clean architecture and AI-assisted development - comfortable owning the entire frontend stack from technical design to production monitoring.
 experience:
   - title: Getsitecontrol
     position: Senior Frontend Engineer
     date_from: 2025-06
     date_to: 2026-03
-    description: Getsitecontrol is a SaaS platform for creating and integrating forms, promo widgets, and email marketing campaigns into websites.
+    description: A MarTech & e-commerce SaaS platform for web forms, promo widgets, and email marketing.
     achievements:
-      - Developed an email campaign builder with support for template creation and integrations with third-party email marketing services.
-      - Built automation tools for email marketing campaign management.
-      - Integrated A/B testing into the platform using GrowthBook, including feature flags and experiment tracking.
-      - Led frontend architecture decisions for the platform, establishing coding standards and development workflows adopted by the team.
+      - Built a full email marketing toolkit including a campaign builder, editor, and integrations with third-party services, reducing time-to-launch for new email campaigns from days to minutes.
+      - Designed and implemented an onboarding flow for new users, improving early user engagement and reducing churn during the first week after signup.
+      - Integrated A/B testing into the platform, including feature flags and experiment tracking, enabling data-driven optimization of CTAs and onboarding flows that improved conversions.
+      - Redesigned the platform dashboard, improving navigation architecture so users can reach any feature within 3 clicks, reducing time-to-feature and improving overall product usability.
+      - Introduced structured code review process and automated linting standards, cutting release cycle from monthly to weekly and reducing post-release regressions below 5%.
   - title: Simplenight
     position: Senior Fullstack Engineer
     date_from: 2024-12
     date_to: 2025-06
-    description: Simplenight is a white-label booking platform for hotels, events, flights, and entertainment, built on Next.js.
+    description: A Travel & Hospitality SaaS booking platform for hotels, flights, and events, built on Next.js.
     achievements:
-      - Reduced Total Blocking Time (TBT) by 80% (from 4.2s to 0.84s) through Next.js SSR pipeline and performance optimization.
-      - Built and maintained a component library and design system, introduced Storybook, streamlining collaboration with the design team.
+      - Reduced Total Blocking Time by 80% (4.2s → 0.84s) and eliminated Cumulative Layout Shift through Next.js SSR pipeline optimization, raising Lighthouse performance score by 33 points.
+      - Built the component library using Tailwind CSS and Storybook with 100% auto-generated documentation coverage, streamlining design-engineering collaboration.
+      - Integrated Lighthouse checks into CI/CD with automated reports, enabling continuous performance monitoring and early regression detection before production.
       - Delivered features end-to-end as a fullstack engineer, handling both frontend and backend implementation independently.
   - title: Getsitecontrol
     position: Senior Frontend Engineer
     date_from: 2019-09
     date_to: 2024-12
-    description: SaaS platform for web forms, promo widgets, and email marketing.
+    description: A MarTech & e-commerce SaaS platform for web forms and promo widgets.
     achievements:
       - Migrated legacy AngularJS codebase to React and RTK using Single-SPA micro-frontend architecture, refactoring the codebase and reducing Total Blocking Time (TBT) by 60%.
-      - Improved product configurability, enabling the launch of a new standalone product "Getform" based on the existing codebase.
+      - Built a statistics dashboard with geo-charts and time series visualizations using Google Charts.
+      - Migrated authentication from session cookies to JWT tokens, reducing server load and enabling instant dashboard access without page reloads, improving login experience.
+      - Added click-to-configure interaction to the WYSIWYG editor, allowing users to access any widget element's settings with a single click, significantly improving editing speed.
+      - Optimized Webpack build pipeline through bundle splitting, tree shaking, and dependency cleanup, reducing build time by 60% and improving developer experience.
+      - Built an integrations layer connecting the platform with third-party email marketing services via webhooks, enabling real-time data sync between the platform and external tools.
       - Redesigned the token system and style architecture, enabling pixel-perfect component development across the platform.
   - title: Novakid
     position: Senior Frontend Engineer / Tech Lead
     date_from: 2017-08
     date_to: 2019-09
-    description: Novakid is an online language school for children, featuring real-time video lessons with an interactive whiteboard, slides, and mini-games.
+    description: An EdTech online platform for kids with real-time video lessons and interactive whiteboard.
     achievements:
+      - Acted as tech lead and mentor for a micro-team of 3 engineers, delivering the MVP in 4 months and establishing the technical foundation for the entire platform.
       - Researched and integrated the open-source media server Kurento, enabling WebRTC-based video calls in the browser and accelerating the launch of the first product version.
       - Designed and built a real-time video communication platform using WebRTC and Node.js from scratch, scaling to 1000+ concurrent active sessions per day.
-      - Grew from sole frontend developer to Tech Lead, managing a team of 4 and overseeing all platform releases.
+      - Built a real-time collaborative whiteboard with multi-user interaction, animations, and visual effects, powered by WebSockets for instant cross-participant synchronization.
+      - Built a self-diagnostic tool that checks users' camera, microphone, and connection quality before video lessons, reducing lesson cancellations by 40% and improving session reliability.
+      - Set up Jenkins CI/CD pipeline with multi-environment staging stands deployed on AWS EC2, automating builds and deployments and eliminating manual release steps.
+      - Integrated Lokalise for i18n automation, reducing translation preparation time for new features by 3x.
+      - Grew into Tech Lead role, doubled the engineering team, established development processes and code review standards that cut the release cycle from monthly to weekly.
   - title: ASDTech
-    position: Senior Frontend Engineer
+    position: Frontend Engineer
     date_from: 2013-05
     date_to: 2017-08
-    description: Cloud storage solutions provider for major mobile operators including Vodafone, Vestel, and MegaFon.
+    description: A Telecom SaaS platform for cloud storage, serving major mobile operators including Vodafone.
     achievements:
       - Designed a deeply customizable frontend architecture for the company's core product Cloudike, used by millions of users across multiple operators.
       - Built web and mobile clients from the ground up, including an SSO client for seamless authentication across all platforms.
-      - Mentored junior frontend developers, conducting code reviews and sharing best practices.
-  - title: Onlyoffice (TeamLab)
-    position: Frontend Engineer
-    date_from: 2009-09
-    date_to: 2013-05
-    description: Collaborative office suite with document editing, messaging, and video communication tools.
-    achievements:
-      - Developed a web client based on the XMPP protocol for the company's messaging product TM Talk.
-      - Took part in development of a video communication module based on the Red5 media server.
-      - Implemented an API SDK for the major product based on technical documentation.
+      - Implemented i18n support for multiple languages across all operator markets.
+      - Ensured WCAG compliance across all platform interfaces for users with disabilities.
+  # - title: Onlyoffice (TeamLab)
+  #   position: Frontend Engineer
+  #   date_from: 2009-09
+  #   date_to: 2013-05
+  #   description: Collaborative office suite with document editing, messaging, and video communication tools.
+  #   achievements:
+  #     - Developed a web client based on the XMPP protocol for the company's messaging product TM Talk.
+  #     - Took part in development of a video communication module based on the Red5 media server.
+  #     - Implemented an API SDK for the major product based on technical documentation.
 education:
   - title: Vladimir State University / Department of Computer Systems
     #date_from: 2004-09

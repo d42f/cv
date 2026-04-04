@@ -1,13 +1,11 @@
 import { CSSProperties, ReactNode, useEffect, useRef, useState } from 'react';
 import { FaHome, FaPrint } from 'react-icons/fa';
-import Image from 'next/image';
 import Link from 'next/link';
 import classNames from 'classnames';
 
-import { education, email, experience, languages, links, name, phone, position, skills, summary } from '@/resume';
+import { education, email, experience, languages, links, name, position, skills, summary } from '@/resume';
 import { formatDateRange } from '@/utils/date';
-import { linkEmail, linkPhone } from '@/utils/link';
-import { formatPhone } from '@/utils/phone';
+import { linkEmail } from '@/utils/link';
 
 import styles from './ResumeDocument.module.scss';
 
@@ -22,15 +20,12 @@ const DATE_MASK = 'mm/yyyy';
 
 const CONTACTS = [
   { label: email, href: linkEmail(email) },
-  ...(phone ? [{ label: `${formatPhone(phone)}`, href: linkPhone(phone) }] : []),
-  //...(telegram ? [{ label: `telegram: @${telegram}`, href: linkTelegram(telegram) }] : []),
-];
-
-const LINKS = [
+  //...(phone ? [{ label: `${formatPhone(phone)}`, href: linkPhone(phone) }] : []),
   { label: 'LinkedIn', href: links.linkedin },
   { label: 'Github', href: links.github },
   { label: 'Twitter', href: links.twitter },
   { label: 'CodeWars', href: links.codewars },
+  //...(telegram ? [{ label: `telegram: @${telegram}`, href: linkTelegram(telegram) }] : []),
 ].filter(link => link.href);
 
 const SKILLS = [
@@ -88,7 +83,10 @@ const Section = ({ label, points, children }: { label: string; points?: IPoint[]
           {achievements && (
             <ul>
               {achievements.map((achievement: string, index: number) => (
-                <li key={index}>{achievement}</li>
+                <li key={index}>
+                  <span>◦</span>
+                  {achievement}
+                </li>
               ))}
             </ul>
           )}
@@ -136,9 +134,7 @@ export const ResumeDocument = ({ className }: ResumeDocumentProps) => {
             <h1 className={styles.name}>{name}</h1>
             <h2 className={styles.position}>{position}</h2>
             <Links items={CONTACTS} />
-            <Links items={LINKS} />
           </div>
-          <Image className={styles.photo} src="/avatar_small.jpg" width={64} height={64} alt="" />
         </section>
         <Section label="Summary">
           <p dangerouslySetInnerHTML={{ __html: summary }} />
@@ -153,9 +149,7 @@ export const ResumeDocument = ({ className }: ResumeDocumentProps) => {
           </div>
         </Section>
         {!!EXPERIENCE_POINTS.length && <Section label="Experience" points={EXPERIENCE_POINTS} />}
-        <div className={styles.printHelper}>
-          {!!EDUCATION_POINTS.length && <Section label="Education" points={EDUCATION_POINTS} />}
-        </div>
+        {!!EDUCATION_POINTS.length && <Section label="Education" points={EDUCATION_POINTS} />}
         <Section label="Languages">
           <p>{languages}</p>
         </Section>

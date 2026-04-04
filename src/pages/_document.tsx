@@ -1,13 +1,13 @@
 import BaseDocument, { Head, Html, Main, NextScript } from 'next/document';
 
-import { email, name } from '@/resume';
+import { email, name, position } from '@/resume';
 
 export default class Document extends BaseDocument {
   render() {
     return (
       <Html lang="en" dir="ltr">
         <Head>
-          <meta name="description" content={`${name} CV`} />
+          <meta name="description" content={`${name} ${position}`} />
           <meta name="author" content={email} />
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
