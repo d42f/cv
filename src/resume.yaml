@@ -73,7 +73,7 @@ experience:
       - Reduced Total Blocking Time by 80% (4.2s → 0.84s) and eliminated Cumulative Layout Shift through Next.js SSR pipeline optimization, raising Lighthouse performance score by 33 points.
       - Built the component library using Tailwind CSS and Storybook with 100% auto-generated documentation coverage, streamlining design-engineering collaboration.
       - Integrated Lighthouse checks into CI/CD with automated reports, enabling continuous performance monitoring and early regression detection before production.
-      - Delivered features end-to-end as a fullstack engineer, handling both frontend and backend implementation independently.
+      - Delivered features end-to-end as a fullstack engineer, handling both frontend and backend implementation independently using Node.js and NestJS.
   - title: Getsitecontrol
     position: Senior Frontend Engineer
     date_from: 2019-09
