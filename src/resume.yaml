@@ -38,9 +38,9 @@ skills:
     - Git
     - AI coding tools (Claude, Cursor)
   testing:
-    - Vitest
     - Playwright
     - Cypress
+    - Vitest
     - Jest
     - React Testing Library
     - GrowthBook
