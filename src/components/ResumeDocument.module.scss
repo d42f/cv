@@ -241,7 +241,15 @@
     li {
       display: flex;
       flex-flow: row nowrap;
-      gap: 0.5rem;
+      padding: 0 0 0 1rem;
+      position: relative;
+
+      &::before {
+        content: '◦';
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
     }
   }
 }

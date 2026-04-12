@@ -83,10 +83,7 @@ const Section = ({ label, points, children }: { label: string; points?: IPoint[]
           {achievements && (
             <ul>
               {achievements.map((achievement: string, index: number) => (
-                <li key={index}>
-                  <span>◦</span>
-                  {achievement}
-                </li>
+                <li key={index}>{achievement}</li>
               ))}
             </ul>
           )}
