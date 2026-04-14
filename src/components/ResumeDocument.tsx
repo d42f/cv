@@ -134,7 +134,11 @@ export const ResumeDocument = ({ className }: ResumeDocumentProps) => {
           </div>
         </section>
         <Section label="Summary">
-          <p dangerouslySetInnerHTML={{ __html: summary }} />
+          <div>
+            {summary.map((str, index) => (
+              <p key={index} dangerouslySetInnerHTML={{ __html: str }} />
+            ))}
+          </div>
         </Section>
         <Section label="Skills">
           <div className={styles.point}>

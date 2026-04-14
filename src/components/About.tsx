@@ -29,7 +29,7 @@ export const About = ({ className }: AboutProps) => (
         <h2>{name}</h2>
         <h3>{position}</h3>
       </header>
-      <p dangerouslySetInnerHTML={{ __html: `${greeting} ${summary}` }} />
+      <p dangerouslySetInnerHTML={{ __html: `${greeting} ${summary.join('<br>')}` }} />
       <section className={styles.experience}>
         {SKILLS.map((skill, index) => (
           <Fragment key={index}>

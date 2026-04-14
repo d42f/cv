@@ -22,7 +22,7 @@ export interface IResume {
     methodologies: string[];
   };
   languages: string;
-  summary: string;
+  summary: string[];
   greeting: string;
   speeches: Array<{
     title: string;
